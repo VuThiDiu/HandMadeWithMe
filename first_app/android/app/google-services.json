@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "731506150437",
+    "project_id": "little-market-6fa65",
+    "storage_bucket": "little-market-6fa65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731506150437:android:72bc62f88a4d4a2d4ac3cc",
+        "android_client_info": {
+          "package_name": "com.example.first_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731506150437-eg1911vp3u8nh3mgjo9l57jv2brsgsnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn2h-Dlg8Zp6I8OjkL_KUE7zalKodrQpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731506150437-eg1911vp3u8nh3mgjo9l57jv2brsgsnm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
