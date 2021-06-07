@@ -19,10 +19,12 @@ class _regWelState extends State<regWel> {
 
     return Scaffold(
         body: SingleChildScrollView(
+
           child: Container(
+            height: MediaQuery.of(context).size.height,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: Colors.green[900],
+              color:  Color.fromRGBO(252, 215, 236, 1),
             ),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -31,10 +33,10 @@ class _regWelState extends State<regWel> {
                   SizedBox(height: 20,),
                   Image.asset('assets/logo.png', width: 180, height: 180,),
                   SizedBox(height: 50),
-                  Text('Register for Little Garden!',
+                  Text('Create New Account !!!',
                     style: TextStyle(
                       fontFamily: 'AkayaTelivigala',
-                      color: Colors.lime,
+                      color: Color.fromRGBO(255, 144, 181, 1),
                       fontSize: 30,
                     ),
                   ),
@@ -42,12 +44,12 @@ class _regWelState extends State<regWel> {
                   Text('Chúng tôi sẽ giúp bạn tạo tài khoản mới \nsau vài bước dễ dàng',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.white70, fontWeight: FontWeight.w400, fontSize: 20, height: 1.5),
+                        color: Color.fromRGBO(255, 144, 181, 1), fontWeight: FontWeight.w400, fontSize: 20, height: 1.5),
                   ),
                   SizedBox(height: 120,),
                   Flexible(
                         child: RaisedButton(
-                          color: Colors.white,
+                          color: Color.fromRGBO(255, 144, 181, 1),
                           padding: EdgeInsets.fromLTRB(130, 12, 130, 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -60,6 +62,7 @@ class _regWelState extends State<regWel> {
                           child: Text("NEXT",
                             style: TextStyle(
                               fontSize: 20,
+                              color: Colors.white
                             ),),
 
                         )
@@ -71,7 +74,7 @@ class _regWelState extends State<regWel> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Already a member?  ",
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          style: TextStyle(color: Color.fromRGBO(255, 144, 181, 1), fontSize: 18),
                         ),
                         InkWell(
                           onTap: () {
@@ -79,7 +82,7 @@ class _regWelState extends State<regWel> {
                                 builder: (context) => loginPage()));
                           },
                           child: Text("Login now",
-                            style: TextStyle(color: Colors.lime, fontSize: 20),
+                            style: TextStyle(color: Color.fromRGBO(234, 30, 99, 1), fontSize: 20),
                           ),
                         ),
                       ],

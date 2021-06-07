@@ -23,7 +23,7 @@ class _SplashPageState extends State<SplashPage> {
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [Color(4281755726), Color(4284859275)],
+            colors: [Color(4294883769), Color(4294428888)],
           ),
         ),
         child: Column(
@@ -31,14 +31,14 @@ class _SplashPageState extends State<SplashPage> {
             SizedBox(height: 150),
             Image.asset('assets/logo.png', width: 280, height: 280,),
             SizedBox(height: 10),
-
-            Text('Little Garden',
-            style: TextStyle(
-              fontFamily: 'AkayaTelivigala',
-              color: Colors.lime,
-              fontSize: 34,
-             ),
-            ),
+            //
+            // Text('Little Garden',
+            // style: TextStyle(
+            //   fontFamily: 'AkayaTelivigala',
+            //   color: Colors.lime,
+            //   fontSize: 34,
+            //  ),
+            // ),
           ]
         )
         )
