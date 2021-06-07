@@ -23,7 +23,7 @@ class _SplashPageState extends State<SplashPage> {
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [Color(4294883769), Color(4294428888)],
+            colors: [Color(4294945450), Color(4294428888)],
           ),
         ),
         child: Column(

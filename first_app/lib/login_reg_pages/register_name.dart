@@ -19,13 +19,13 @@ class _regNameState extends State<regName> {
           toolbarHeight: 70,
           title: Text('Register',
             style: TextStyle(fontSize: 22),),
-          backgroundColor: Color.fromRGBO(255, 144, 181, 1),
+          backgroundColor:   Color.fromRGBO(254, 185, 185, 1),
         ),
         body: Column(
             children: [
               Slider(
                   value: _currentSliderValue,
-                  activeColor: Color.fromRGBO(255, 144, 181, 1),
+                  activeColor:   Color.fromRGBO(254, 185, 185, 1),
                   min: 0,
                   max: 3,
                   divisions: 3,
@@ -39,7 +39,7 @@ class _regNameState extends State<regName> {
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w700,
-                  color: Color.fromRGBO(255, 144, 181, 1)
+                  color:  Color.fromRGBO(254, 185, 185, 1)
                 ),
                 textAlign: TextAlign.center,),
               SizedBox(height: 40,),
@@ -47,14 +47,14 @@ class _regNameState extends State<regName> {
                 margin: EdgeInsets.fromLTRB(40, 0, 40, 40),
                 decoration: BoxDecoration(
                     border: Border(
-                      bottom: BorderSide(width: 1.0, color: Color.fromRGBO(255, 144, 181, 1)),
+                      bottom: BorderSide(width: 1.0, color:  Color.fromRGBO(254, 185, 185, 1)),
                     )
                 ),
                 child: TextFormField(
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Color.fromRGBO(255, 144, 181, 1)),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color:  Color.fromRGBO(254, 185, 185, 1)),
                   decoration: InputDecoration(
                     hintText: ('Họ tên đầy đủ'),
-                    hintStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 144, 181, 1)),
+                    hintStyle: TextStyle(fontSize: 20, color:  Color.fromRGBO(254, 185, 185, 1)),
                   ),
                   autofocus: true,
                   onChanged: (val){
@@ -64,7 +64,7 @@ class _regNameState extends State<regName> {
               ),
               Flexible(
                   child: RaisedButton(
-                    color: Color.fromRGBO(255, 144, 181, 1),
+                    color:  Color.fromRGBO(254, 185, 185, 1),
                     padding: EdgeInsets.fromLTRB(140, 12, 140, 12),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),

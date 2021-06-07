@@ -24,13 +24,13 @@ class _regNumberPhoneState extends State<regNumberPhone> {
         toolbarHeight: 70,
         title: Text('Register',
           style: TextStyle(fontSize: 22),),
-        backgroundColor: Color.fromRGBO(255, 144, 181, 1),
+        backgroundColor:  Color.fromRGBO(254, 185, 185, 1),
       ),
       body: Column(
         children: [
           Slider(
             value: _currentSliderValue,
-            activeColor: Color.fromRGBO(255, 144, 181, 1),
+            activeColor:  Color.fromRGBO(254, 185, 185, 1),
             min: 0,
             max: 3,
             divisions: 3,
@@ -44,7 +44,7 @@ class _regNumberPhoneState extends State<regNumberPhone> {
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.w700,
-              color: Color.fromRGBO(255, 144, 181, 1)
+              color:  Color.fromRGBO(254, 185, 185, 1)
             ),
           textAlign: TextAlign.center,),
           SizedBox(height: 40,),
@@ -56,10 +56,10 @@ class _regNumberPhoneState extends State<regNumberPhone> {
                 )
             ),
             child: TextFormField(
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Color.fromRGBO(255, 144, 181, 1)),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color:  Color.fromRGBO(254, 185, 185, 1)),
               decoration: InputDecoration(
                   hintText: ('Số điện thoại'),
-                  hintStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 144, 181, 1)),
+                  hintStyle: TextStyle(fontSize: 20, color:  Color.fromRGBO(254, 185, 185, 1)),
               ),
               autofocus: true,
               onChanged: (value){
@@ -73,7 +73,7 @@ class _regNumberPhoneState extends State<regNumberPhone> {
           ),
           Flexible(
               child: RaisedButton(
-                color: Color.fromRGBO(255, 144, 181, 1),
+                color:  Color.fromRGBO(254, 185, 185, 1),
                 padding: EdgeInsets.fromLTRB(140, 12, 140, 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),

@@ -40,7 +40,7 @@ class _regOTPState extends State<regOTP> {
           toolbarHeight: 70,
           title: Text('Register',
             style: TextStyle(fontSize: 22),),
-          backgroundColor: Color.fromRGBO(255, 144, 181, 1),
+          backgroundColor:  Color.fromRGBO(254, 185, 185, 1),
         ),
         body: Container(
           alignment: Alignment.center,
@@ -48,7 +48,7 @@ class _regOTPState extends State<regOTP> {
               children: <Widget> [
                 Slider(
                   value: _currentSliderValue,
-                  activeColor: Color.fromRGBO(255, 144, 181, 1),
+                  activeColor: Color.fromRGBO(254, 185, 185, 1),
                   min: 0,
                   max: 3,
                   divisions: 3,
@@ -61,13 +61,13 @@ class _regOTPState extends State<regOTP> {
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromRGBO(255, 144, 181, 1)
+                    color:  Color.fromRGBO(254, 185, 185, 1)
                   ),
                   textAlign: TextAlign.center,),
                 Text('Mã OTP được gửi về tin nhắn điện thoại của bạn',
                   style: TextStyle(
                     fontSize: 17,
-                    color: Color.fromRGBO(255, 144, 181, 1),
+                    color:  Color.fromRGBO(254, 185, 185, 1),
                   ),
                   textAlign: TextAlign.center,),
                 SizedBox(height: 40,),
@@ -80,11 +80,12 @@ class _regOTPState extends State<regOTP> {
                       )
                   ),
                   child: TextField(
-                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w500, letterSpacing: 32, color: Color.fromRGBO(255, 144, 181, 1)),
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w500, letterSpacing: 32, color:  Color.fromRGBO(254, 185, 185, 1)),
                     decoration: InputDecoration(
                         hintStyle: TextStyle(fontSize: 20, color: Colors.grey),
                         border: InputBorder.none
                     ),
+                    keyboardType: TextInputType.number,
                     autofocus: true,
                     maxLength: 6,
                     controller: _controler,
@@ -125,7 +126,7 @@ class _regOTPState extends State<regOTP> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
-                          color: Color.fromRGBO(255, 144, 181, 1),
+                          color:  Color.fromRGBO(254, 185, 185, 1),
                           onPressed: (){
                             Navigator.push(
                                 context,

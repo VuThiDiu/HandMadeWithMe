@@ -41,7 +41,7 @@ class _loginPageState extends State<loginPage> {
          height: MediaQuery.of(context).size.height,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: Color.fromRGBO(252, 215, 236, 1),
+              color: Color.fromRGBO(254, 233, 229, 1),
             ),
               child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -71,16 +71,17 @@ class _loginPageState extends State<loginPage> {
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            Row(
-                              children: [
-                                Image.asset('assets/logo.png', width: 100, height: 100,),
-
-
-                              ],
-                            ),
+                            Image.asset('assets/logo.png', width: 100, height: 100,),
+                            // Row(
+                            //   children: [
+                            //     Image.asset('assets/logo.png', width: 100, height: 100,),
+                            //
+                            //
+                            //   ],
+                            // ),
                              Text("Sign In", style: TextStyle(
                                fontFamily: 'AkayaTelivigala',
-                               color: Color.fromRGBO(255, 144, 181, 1),
+                               color: Color.fromRGBO(254, 185, 185, 1),
                                fontSize: 35,
                              ), ),
                            SizedBox(height: 50,),
@@ -94,13 +95,13 @@ class _loginPageState extends State<loginPage> {
                                     alignment: Alignment.centerRight,
                                     child: Text("Account is not registered",
                                       style: TextStyle(
-                                          color: Color.fromRGBO(255, 144, 181, 1)
+                                          color: Color.fromRGBO(254, 185, 185, 1)
                                       ),)
                                 )),
                           Flexible(
                                 child: RaisedButton(
                                   //padding: EdgeInsets.fromLTRB(150, 12, 150, 12),
-                                  color: Color.fromRGBO(255, 144, 181, 1),
+                                  color: Color.fromRGBO(254, 185, 185, 1),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(Radius.circular(20)),
                                   ),
@@ -126,7 +127,7 @@ class _loginPageState extends State<loginPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text("Don't have an account?  ",
-                                      style: TextStyle(color: Color.fromRGBO(255, 144, 181, 1), fontSize: 18),
+                                      style: TextStyle(color: Color.fromRGBO(254, 185, 185, 1), fontSize: 18),
                                     ),
                                     InkWell(
                                       onTap: () {
@@ -148,71 +149,7 @@ class _loginPageState extends State<loginPage> {
                       ),
                     ),
                     SizedBox(height: 100,)
-                    // Text('Welcome to Little Market!',
-                    //   style: TextStyle(
-                    //     fontFamily: 'AkayaTelivigala',
-                    //     color: Color.fromRGBO(255, 144, 181, 1),
-                    //     fontSize: 28,
-                    //   ),
-                    // ),
-                    /*SizedBox(height: 40,),
-                    _textInput(hint: "Number Phone", icon: Icons.phone,),
-                    Visibility(visible: !_visible, child: SizedBox(height: 80,)),
-                    Visibility(
-                        visible: _visible,
-                        child: Container(
-                            margin: EdgeInsets.only(
-                                top: 20, bottom: 40, right: 30),
-                            alignment: Alignment.centerRight,
-                            child: Text("Account is not registered",
-                              style: TextStyle(
-                                  color: Color.fromRGBO(255, 144, 181, 1)
-                              ),)
-                        )),
 
-                    Flexible(
-                      child: SizedBox(
-                          child: RaisedButton(
-                            padding: EdgeInsets.fromLTRB(150, 12, 150, 12),
-                            color: Color.fromRGBO(255, 144, 181, 1),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(20)),
-                            ),
-
-                            onPressed: () async {
-                              FirebaseAuth.instance.signOut();
-                              _verifyPhone();
-                            },
-                            child: Text("LOGIN",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white
-                              ),
-                            ),
-                          )
-                      ),
-                    ),
-                    SizedBox(height: 100,),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Don't have an account?  ",
-                              style: TextStyle(color: Color.fromRGBO(255, 144, 181, 1), fontSize: 18),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) => regWel()));
-                              },
-                              child: Text("Registor",
-                                style: TextStyle(color: Colors.lime, fontSize: 20),
-                              ),
-                            )
-                          ]
-                      ),
-                    )*/
                   ]
               ),
             )
@@ -231,11 +168,11 @@ class _loginPageState extends State<loginPage> {
       ),
       child: TextFormField(
         controller: controller,
-        style: TextStyle(color: Color.fromRGBO(255, 144, 181, 1)),
+        style: TextStyle(color: Color.fromRGBO(254, 185, 185, 1)),
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 144, 181, 1)),
-          prefixIcon: Icon(icon, color: Color.fromRGBO(255, 144, 181, 1)),
+          hintStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(254, 185, 185, 1)),
+          prefixIcon: Icon(icon, color: Color.fromRGBO(254, 185, 185, 1)),
         ),
         onChanged: (value) {
           if (value[0] == "0") {
@@ -297,7 +234,7 @@ class _loginPageState extends State<loginPage> {
               return AlertDialog(
                 title: Text("Enter Code",
                   style: TextStyle(
-                      color: Color.fromRGBO(255, 144, 181, 1),
+                      color: Color.fromRGBO(254, 185, 185, 1),
                       fontSize: 20
                   ),),
                 content: TextField(
@@ -311,6 +248,7 @@ class _loginPageState extends State<loginPage> {
                           FirebaseAuth.instance.signOut();
                         } else {
                           clearTextInput();
+                          //print('ơ hay');
                           signIn();
                         }
                       });
@@ -319,7 +257,7 @@ class _loginPageState extends State<loginPage> {
                   autofocus: true,
                   maxLength: 6,
                   style: TextStyle(
-                    color: Color.fromRGBO(255, 144, 181, 1),
+                    color: Color.fromRGBO(254, 185, 185, 1),
                     fontSize: 30,
                     letterSpacing: 23,
 
@@ -344,6 +282,7 @@ class _loginPageState extends State<loginPage> {
           });
         }
         else{
+          print("signed in ");
           Navigator.pop(context);
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => SummaryPage(user: value)));

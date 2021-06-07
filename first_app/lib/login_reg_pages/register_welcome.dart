@@ -24,7 +24,7 @@ class _regWelState extends State<regWel> {
             height: MediaQuery.of(context).size.height,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color:  Color.fromRGBO(252, 215, 236, 1),
+              color:  Color.fromRGBO(250, 202, 212, 1),
             ),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -36,7 +36,7 @@ class _regWelState extends State<regWel> {
                   Text('Create New Account !!!',
                     style: TextStyle(
                       fontFamily: 'AkayaTelivigala',
-                      color: Color.fromRGBO(255, 144, 181, 1),
+                      color: Color.fromRGBO(	246, 117, 145, 1),
                       fontSize: 30,
                     ),
                   ),
@@ -44,12 +44,12 @@ class _regWelState extends State<regWel> {
                   Text('Chúng tôi sẽ giúp bạn tạo tài khoản mới \nsau vài bước dễ dàng',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Color.fromRGBO(255, 144, 181, 1), fontWeight: FontWeight.w400, fontSize: 20, height: 1.5),
+                        color: Color.fromRGBO(	246, 117, 145, 1), fontWeight: FontWeight.w400, fontSize: 20, height: 1.5),
                   ),
                   SizedBox(height: 120,),
                   Flexible(
                         child: RaisedButton(
-                          color: Color.fromRGBO(255, 144, 181, 1),
+                          color: Color.fromRGBO(	246, 117, 145, 1),
                           padding: EdgeInsets.fromLTRB(130, 12, 130, 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -74,7 +74,7 @@ class _regWelState extends State<regWel> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Already a member?  ",
-                          style: TextStyle(color: Color.fromRGBO(255, 144, 181, 1), fontSize: 18),
+                          style: TextStyle(color: Color.fromRGBO(	246, 117, 145, 1), fontSize: 18),
                         ),
                         InkWell(
                           onTap: () {
