@@ -66,6 +66,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/bg_account.jpg
     - assets/DoTrangSuc.jpg
     - assets/DoNoiThat.jpg
     - assets/QuaChucMung.jpg

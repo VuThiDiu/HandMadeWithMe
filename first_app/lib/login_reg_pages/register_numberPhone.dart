@@ -22,15 +22,18 @@ class _regNumberPhoneState extends State<regNumberPhone> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
         title: Text('Register',
-          style: TextStyle(fontSize: 22),),
-        backgroundColor:  Color.fromRGBO(254, 185, 185, 1),
+          style: TextStyle(fontSize: 22, color: Colors.black),),
+        backgroundColor:  Color(4294945450),
       ),
       body: Column(
         children: [
           Slider(
             value: _currentSliderValue,
-            activeColor:  Color.fromRGBO(254, 185, 185, 1),
+            activeColor:  Color(4294344335),
             min: 0,
             max: 3,
             divisions: 3,
@@ -44,7 +47,7 @@ class _regNumberPhoneState extends State<regNumberPhone> {
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.w700,
-              color:  Color.fromRGBO(254, 185, 185, 1)
+              color:  Color(4294344335)
             ),
           textAlign: TextAlign.center,),
           SizedBox(height: 40,),
@@ -52,14 +55,14 @@ class _regNumberPhoneState extends State<regNumberPhone> {
             margin: EdgeInsets.fromLTRB(40, 0, 40, 40),
             decoration: BoxDecoration(
                 border: Border(
-                  bottom: BorderSide(width: 1.0, color: Colors.blue),
+                  bottom: BorderSide(width: 1.0, color: Color(4294565598)),
                 )
             ),
             child: TextFormField(
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color:  Color.fromRGBO(254, 185, 185, 1)),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color:  Color(4294344335)),
               decoration: InputDecoration(
                   hintText: ('Số điện thoại'),
-                  hintStyle: TextStyle(fontSize: 20, color:  Color.fromRGBO(254, 185, 185, 1)),
+                  hintStyle: TextStyle(fontSize: 20, color:  Color(4294344335)),
               ),
               autofocus: true,
               onChanged: (value){
@@ -73,7 +76,7 @@ class _regNumberPhoneState extends State<regNumberPhone> {
           ),
           Flexible(
               child: RaisedButton(
-                color:  Color.fromRGBO(254, 185, 185, 1),
+                color:  Color(4294344335),
                 padding: EdgeInsets.fromLTRB(140, 12, 140, 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),

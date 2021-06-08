@@ -26,9 +26,12 @@ class _AddAddressState extends State<AddAddress> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.black
+          ),
           title: Text(
             "Thêm địa chỉ",
-            style: TextStyle(fontSize: 21),
+            style: TextStyle(fontSize: 21, color: Colors.black),
           ),
           centerTitle: true,
           toolbarHeight: 65,
@@ -37,7 +40,7 @@ class _AddAddressState extends State<AddAddress> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Color(4281755726), Color(0xFF488B66)],
+                  colors: [Color(4294945450), Color(4294565598)],
                 ),
               )),
         ),
@@ -150,7 +153,7 @@ class _AddAddressState extends State<AddAddress> {
                   padding: EdgeInsets.all(15),
                   minWidth: 410,
                   child: Text("CHỌN ĐỊA CHỈ", style: TextStyle(color: Colors.white, fontSize: 18),),
-                  color: Color(0xFF488B66),
+                  color: Color(4294344335),
                 )
               ])),
         ));

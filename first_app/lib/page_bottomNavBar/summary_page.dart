@@ -78,90 +78,72 @@ class _SummaryPageState extends State<SummaryPage> {
           BottomNavigationBarItem(
             icon: Icon(
               FontAwesomeIcons.home,
-              color: Color(4281755726),
+              color: Color(4294421958),
               size: 27.0,
             ),
             activeIcon: Icon(
             FontAwesomeIcons.home,
-            color: Color(0xFF488B66),
+            color: Color(4294872718),
             size: 27.0,
             ),
             title: Text(
               'Trang chủ',
               style: TextStyle(
-                  color: Color(0xFF488B66)
+                  color: Color(4294872718)
               ),
             ),
           ),
-         /* BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.wallet,
-              color: Color(4281755726),
-              size: 27.0,
-            ),
-            activeIcon: Icon(
-              FontAwesomeIcons.wallet,
-              color: Color(0xFF488B66),
-              size: 27.0,
-            ),
-            title: Text(
-              'Ví điện tử',
-              style: TextStyle(
-                  color: Color(0xFF488B66)
-              ),
-            ),
-          ),*/
           BottomNavigationBarItem(
             icon: Icon(
               FontAwesomeIcons.solidNewspaper,
-              color: Color(4281755726),
+              color: Color(4294421958),
               size: 27.0,
             ),
             activeIcon: Icon(
               FontAwesomeIcons.solidNewspaper,
-              color: Color(0xFF488B66),
+              color: Color(4294872718),
               size: 27.0,
             ),
             title: Text(
               'Cẩm nang',
               style: TextStyle(
-                  color: Color(0xFF488B66)
+                  color: Color(4294872718)
               ),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(
               FontAwesomeIcons.solidHeart,
-              color: Color(4281755726),
+              color: Color(4294421958),
               size: 27.0,
             ),
             activeIcon: Icon(
               FontAwesomeIcons.solidHeart,
-              color: Color(0xFF488B66),
+              color: Color(4294872718),
               size: 27.0,
             ),
             title: Text(
               'Đã thích',
               style: TextStyle(
-                  color: Color(0xFF488B66)
+                  color: Color(4294872718)
               ),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(
               FontAwesomeIcons.solidUser,
-              color: Color(4281755726),
+              color: Color(4294421958),
               size: 27.0,
             ),
             activeIcon: Icon(
               FontAwesomeIcons.solidUser,
-              color: Color(0xFF488B66),
+              color: Color(4294872718),
               size: 27.0,
             ),
             title: Text(
               'Tài khoản',
               style: TextStyle(
-                  color: Color(0xFF488B66)
+                  color: Color(4294872718)
               ),
             ),
           ),

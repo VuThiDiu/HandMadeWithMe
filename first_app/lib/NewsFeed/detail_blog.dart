@@ -58,7 +58,7 @@ class _DetailBlogState extends State<DetailBlog> {
                     images: [
                       NetworkImage(widget.articles.handbook.imageUrl)
                     ],
-                    dotColor: Color(0xFF407C5A),
+                    dotColor: Color(4294344335),
                     autoplay: false,
                     animationCurve: Curves.fastOutSlowIn,
                     animationDuration: Duration(milliseconds: 1000),
@@ -74,7 +74,7 @@ class _DetailBlogState extends State<DetailBlog> {
                     icon: Icon(
                       Icons.arrow_back,
                       size: 25,
-                      color: Color(0xFF407C5A),
+                      color: Color(4294344335),
                     ))),
             Positioned(
                 top: 200,
@@ -121,7 +121,7 @@ class _DetailBlogState extends State<DetailBlog> {
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 22,
-                                color: Color(0xFF407C5A),
+                                color: Color(4294344335),
                               )),
                         ),
                         Spacer(),

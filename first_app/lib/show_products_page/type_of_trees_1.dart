@@ -39,15 +39,26 @@ class _TypeOfTreesState extends State<TypeOfTrees> {
     return (this.viewResult == 1) ? Scaffold(
       appBar: AppBar(
           toolbarHeight: 75,
+          title: Text(
+            widget.specialDay,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 25,
+              fontWeight: FontWeight.w700
+            ),
+          ),
           //title: SearchBox(text: 'NameTypeOfTree'),
           leadingWidth: 20,
+          iconTheme: IconThemeData(
+            color: Colors.black
+          ),
           centerTitle: true,
-          backgroundColor: Color(0xFF407C5A),
+          backgroundColor: Color(4294945450),
           actions: [
             IconButton(
               icon: Icon(
                 FontAwesomeIcons.bell,
-                color: Colors.white,
+                color: Colors.black,
                 size: 27.0,
               ),
               onPressed: () {},
@@ -57,31 +68,6 @@ class _TypeOfTreesState extends State<TypeOfTrees> {
         scrollDirection: Axis.vertical,
           child: Column(
         children: <Widget>[
-          Container(
-            alignment: Alignment.topLeft,
-            margin: EdgeInsets.only(left: 10, top: 10),
-            child: Text(
-              "" + widget.specialDay,
-              style: TextStyle(
-                  color: Color(4281755650),
-                  fontWeight: FontWeight.w700,
-                  fontSize: 25),
-            ),
-          ),
-          //ListGroupOfTrees(this.listPlantGroupByCategory, widget.user),
-          // Container(
-          //   alignment: Alignment.topLeft,
-          //   margin: EdgeInsets.only(left: 10, top: 10),
-          //   child: Text(
-          //     "Top sản phẩm bán chạy",
-          //     style: TextStyle(
-          //         color: Color(4281755650),
-          //         fontWeight: FontWeight.w700,
-          //         fontSize: 25),
-          //   ),
-          // ),
-
-         // TreeItem(listProduct, widget.user),
           Container(
               height: 600,
               child: Column(
@@ -166,7 +152,7 @@ class _TypeOfTreesState extends State<TypeOfTrees> {
               product.setlistImage(listImage);
             }
             else{
-              product.setlistImage(['https://cdn.shopify.com/s/files/1/0212/1030/0480/products/BraidedMoneyTree-Full_560x560_crop_center.jpg?v=1605012647']);
+              product.setlistImage(['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGPL6RMbqGSqWK6sRGp537hVDb2q2fklxFrQ&usqp=CAU']);
             }
             newList.add(product);
             if(newList.length == count){

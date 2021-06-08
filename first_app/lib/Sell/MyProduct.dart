@@ -58,7 +58,7 @@ class _MyProductState extends State<MyProduct> {
               product.setlistImage(listImage);
             }
             else{
-              product.setlistImage(['https://cdn.shopify.com/s/files/1/0212/1030/0480/products/BraidedMoneyTree-Full_560x560_crop_center.jpg?v=1605012647']);
+              product.setlistImage(['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGPL6RMbqGSqWK6sRGp537hVDb2q2fklxFrQ&usqp=CAU']);
             }
             products.add(product);
             if(products.length == count){
@@ -83,7 +83,7 @@ class _MyProductState extends State<MyProduct> {
       child: Theme(
         data: ThemeData(
             appBarTheme: AppBarTheme(
-                backgroundColor: Color(0xFF407C5A),
+                backgroundColor: Color(4294945450),
                 actionsIconTheme: IconThemeData(color: Colors.white)
             )
         ),
@@ -91,7 +91,7 @@ class _MyProductState extends State<MyProduct> {
           appBar: AppBar(
             toolbarHeight: 100,
             centerTitle: true,
-            title: Text('Sản phẩm đã đăng', style: TextStyle(fontSize: 28),),
+            title: Text('Sản phẩm đã đăng', style: TextStyle(fontSize: 28, color: Colors.black),),
             automaticallyImplyLeading: false,
           ),
           body: Container(
@@ -123,7 +123,7 @@ class _MyProductState extends State<MyProduct> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               FloatingActionButton(
-                backgroundColor: Color(0xFF407C5A),
+                backgroundColor: Color(4294945450),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(
                       builder: (context) => AddProduct(user: widget.user,)));
@@ -145,7 +145,7 @@ class _MyProductState extends State<MyProduct> {
             Container(
               width: 90,
               height: 90,
-              color: Color(4291751385),
+              color: Color(4294565598),
             ),
             FlatButton(
               onPressed: () {

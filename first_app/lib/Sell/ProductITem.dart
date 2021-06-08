@@ -48,7 +48,7 @@ class _ProductItemState extends State<ProductItem> {
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                       boxShadow: [
                         BoxShadow(
-                            color: Color(4291751385),
+                            color: Color(4294565598),
                             offset: Offset(0, 140),
                             spreadRadius: 0,
                             blurRadius: 100.0),
@@ -99,7 +99,7 @@ class _ProductItemState extends State<ProductItem> {
                                   children: [
                                     Text(
                                       widget.product.price + 'đ',
-                                      style: TextStyle(color: Colors.green[900]),
+                                      style: TextStyle(color: Color(4294344335)),
                                     ),
                                     RichText(
                                         text: TextSpan(

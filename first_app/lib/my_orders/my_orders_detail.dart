@@ -76,7 +76,7 @@ class _MyOrderDetailState extends State<MyOrderDetail>{
               });
               product.setlistImage(listImage);
             }else
-              product.setlistImage(['https://cdn.shopify.com/s/files/1/0212/1030/0480/products/BraidedMoneyTree-Full_560x560_crop_center.jpg?v=1605012647']);
+              product.setlistImage(['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGPL6RMbqGSqWK6sRGp537hVDb2q2fklxFrQ&usqp=CAU']);
             if(product.listImage.isNotEmpty){
               setState(() {
                 this.viewResult +=1;
@@ -92,10 +92,13 @@ class _MyOrderDetailState extends State<MyOrderDetail>{
   Widget build(BuildContext context){
     return (this.viewResult==3) ? Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF407C5A),
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
+        backgroundColor: Color(4294945450),
         title: Text(
           "Thông tin đơn hàng",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -134,7 +137,7 @@ class _MyOrderDetailState extends State<MyOrderDetail>{
             SizedBox(height: 10,),
             Container(
               height: 40,
-              color: Colors.grey[200],
+              color: Color(4294565598),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -157,7 +160,7 @@ class _MyOrderDetailState extends State<MyOrderDetail>{
             ),
             SizedBox(height: 20,),
             Container(
-              color: Colors.grey[200],
+              color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -177,41 +180,13 @@ class _MyOrderDetailState extends State<MyOrderDetail>{
                     )
                   ],
                 ),
-                  // Row(
-                  //   crossAxisAlignment: CrossAxisAlignment.start,
-                  //   children: [
-                  //     Text(
-                  //       ' Phí ship: ',
-                  //       style: TextStyle(fontSize: 18, height: 2),
-                  //     ),
-                  //     Spacer(),
-                  //     Text(
-                  //       ' 15000',
-                  //       style: TextStyle(fontSize: 18, height: 2),
-                  //     )
-                  //   ],
-                  // ),
-                  // Row(
-                  //   crossAxisAlignment: CrossAxisAlignment.start,
-                  //   children: [
-                  //     Text(
-                  //       ' Tổng thanh toán: ',
-                  //       style: TextStyle(fontSize: 22, height: 2,fontWeight: FontWeight.bold),
-                  //     ),
-                  //     Spacer(),
-                  //     Text(
-                  //       '135000',
-                  //       style: TextStyle(fontSize: 22, height: 2),
-                  //     )
-                  //   ],
-                  // ),
           ],
         ),
       ),
            SizedBox(height: 20,),
 
            Container(
-             color: Colors.grey[200],
+             color: Colors.white,
              child: Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
@@ -269,8 +244,8 @@ class _MyOrderDetailState extends State<MyOrderDetail>{
              buttonPadding: EdgeInsets.symmetric(vertical: 10),
              children: <Widget>[
                FlatButton(
-                 child: Text('Mua lại', style: TextStyle(fontSize: 20)),
-                 color: Color(0xFF407C5A),
+                 child: Text('Mua lại', style: TextStyle(fontSize: 20, color: Colors.black)),
+                 color: Color(4294344335),
                  onPressed: (){
                    PurchaseService().addProductToTheCart(product.productID, 1, widget.user.uid, product.accountID, product.listImage.last, product.productName, product.price);
                    Navigator.push(context, MaterialPageRoute(builder: (context) => showCart(widget.user)));

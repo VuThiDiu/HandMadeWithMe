@@ -20,17 +20,26 @@ class _ShowItemPageState extends State<ShowItemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
           toolbarHeight: 75,
-          title: Text(widget.plant.categoryName),
+          title: Text(widget.plant.categoryName,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+            fontWeight: FontWeight.w700
+          ),),
           leadingWidth: 20,
           centerTitle: true,
-          backgroundColor: Color(0xFF407C5A),
+          backgroundColor: Color(4294945450),
           actions: [
             IconButton(
               icon: Image.asset(
                 'assets/alert.png',
                 width: 35,
                 height: 35,
+                color: Colors.black,
               ),
               onPressed: () {
 

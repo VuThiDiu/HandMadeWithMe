@@ -146,13 +146,13 @@ class _AddProductState extends State<AddProduct>{
   Widget build (BuildContext context) {
     return (this.viewResult==2) ? Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF407C5A),
+        backgroundColor: Color(4294945450),
         iconTheme: IconThemeData(
-          color: Colors.yellow,
+          color: Colors.black,
         ),
         title: Text(
           'Thêm sản phẩm',
-          style: TextStyle(color: Colors.yellow, fontSize: 25),
+          style: TextStyle(color: Colors.black, fontSize: 25),
         ),
         centerTitle: true,
       ),
@@ -196,7 +196,7 @@ class _AddProductState extends State<AddProduct>{
                     hintText: 'Nhập tên sản phẩm',
                     labelText: 'Tên sản phẩm',
                     labelStyle: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500),
-                    hintStyle: TextStyle(fontSize: 18, color: Colors.green)
+                    hintStyle: TextStyle(fontSize: 18, color: Colors.black45)
                 ),
                 onChanged: (value) {
                   setState(() {
@@ -232,7 +232,7 @@ class _AddProductState extends State<AddProduct>{
                             ),
                           ),
                           hintText: 'Nhập tại đây ',
-                          hintStyle: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.w500) ),
+                          hintStyle: TextStyle(color: Colors.black45, fontSize: 20, fontWeight: FontWeight.w500) ),
                       style: TextStyle(fontSize: 20),
                       maxLines: 6,
                       onChanged: (text){
@@ -244,37 +244,6 @@ class _AddProductState extends State<AddProduct>{
               ),
             ),
             SizedBox(height: 15),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(),
-            //   child: FlatButton(
-            //     onPressed: () async {
-            //         Navigator.push(
-            //           context,
-            //           MaterialPageRoute(builder: (context) => Specification()),
-            //         ).then((value){
-            //           if(value!=null)
-            //           setState(() {
-            //             this.specificationProduct = value;
-            //           });
-            //         });
-            //
-            //     },
-            //     child: Row(
-            //       children: <Widget>[
-            //         Icon(Icons.assessment_sharp),
-            //         Expanded(
-            //           child:
-            //           Text(
-            //             ' Đặc tả cây',
-            //             style: TextStyle(fontSize: 20),
-            //           ),
-            //         ),
-            //         Icon(Icons.arrow_forward_ios),
-            //       ],
-            //     ),
-            //
-            //   ),
-            // ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
@@ -296,7 +265,7 @@ class _AddProductState extends State<AddProduct>{
                           ),
                           fillColor: Colors.green,
                           hintText: 'Nhập ',
-                          hintStyle: TextStyle(color: Colors.green, decoration: TextDecoration.underline, fontSize: 18) ),
+                          hintStyle: TextStyle(color: Colors.black45, decoration: TextDecoration.underline, fontSize: 18) ),
                       textDirection: TextDirection.rtl,
                       keyboardType: TextInputType.number,
                       style: TextStyle(fontSize: 20),
@@ -332,7 +301,7 @@ class _AddProductState extends State<AddProduct>{
                           ),
                           fillColor: Colors.green,
                           hintText: 'Nhập ',
-                          hintStyle: TextStyle(color: Colors.green, decoration: TextDecoration.underline, fontSize: 18) ),
+                          hintStyle: TextStyle(color: Colors.black45, decoration: TextDecoration.underline, fontSize: 18) ),
                       textDirection: TextDirection.rtl,
                       keyboardType: TextInputType.number,
                       style: TextStyle(fontSize: 20),
@@ -454,7 +423,7 @@ class _AddProductState extends State<AddProduct>{
                           ),
                           fillColor: Colors.green,
                           hintText: 'Nhập ',
-                          hintStyle: TextStyle(color: Colors.green, decoration: TextDecoration.underline, fontSize: 18) ),
+                          hintStyle: TextStyle(color: Colors.black45, decoration: TextDecoration.underline, fontSize: 18) ),
                       textDirection: TextDirection.rtl,
                       keyboardType: TextInputType.number,
                       style: TextStyle(fontSize: 20),
@@ -574,8 +543,6 @@ class _AddProductState extends State<AddProduct>{
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //crossAxisAlignment: CrossAxisAlignment.center,
                 children:<Widget> [
                   Icon(Icons.addchart),
                   Text(
@@ -584,7 +551,7 @@ class _AddProductState extends State<AddProduct>{
                   ),
                   new Spacer(),
                   Switch(
-                      activeColor: Colors.green,
+                      activeColor: Color(4294945450),
                       value: enableFeature,
                       onChanged: (enabled){
                         setState(() {
@@ -597,13 +564,13 @@ class _AddProductState extends State<AddProduct>{
             ),
             SizedBox(height: 15,),
             RaisedButton(
-              color: Color(0xFF407C5A),
+              color: Color(4294344335),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               onPressed: () async {
                 if(whenCompleted()==true){
                   if(this.event == null) this.event = "";
                     Product product = new Product(productName: this.title,price: this.amount,  weight: this.transportProduct.weight, fastDelivery: this.transportProduct.fastDelivery, quantityInStock: this.quantityInStock,preOrder: this.enableFeature, address: this.address, accountID:  widget.user.uid, category: this.category, description: this.description, event: this.event, material: this.material);
-                    String image = "https://thietkenoithatanphong.com/wp-content/uploads/2019/05/handmade-la-gi.jpg";
+                    String image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGPL6RMbqGSqWK6sRGp537hVDb2q2fklxFrQ&usqp=CAU";
                     ProductService().createProduction(product).then((value){
                       if(_image.length>0){
                         var  index = 0;
@@ -620,7 +587,7 @@ class _AddProductState extends State<AddProduct>{
               },
               child: Text(
                 'Lưu'.toUpperCase(),
-                style: TextStyle(fontSize: 20,color: Colors.yellow,),
+                style: TextStyle(fontSize: 20,color: Colors.black,),
               ),
             )
           ],

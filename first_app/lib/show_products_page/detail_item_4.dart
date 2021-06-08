@@ -49,6 +49,9 @@ class _DetailItemState extends State<DetailItem> {
 
     return (this.viewResult) ?  Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
           toolbarHeight: 50,
           centerTitle: true,
           elevation: 0.0,
@@ -60,7 +63,7 @@ class _DetailItemState extends State<DetailItem> {
                 fontFamily: "Merriweather",
                 fontSize: 25,
                 fontWeight: FontWeight.w700,
-                color: Colors.white),
+                color: Colors.black),
           ),
           bottomOpacity: 0.0,
           flexibleSpace: Container(
@@ -68,7 +71,7 @@ class _DetailItemState extends State<DetailItem> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Color(4281755726), Color(0xFF488B66)],
+              colors: [Color(4294945450), Color(4294565598)],
             ),
           )),
           actions: [
@@ -100,7 +103,7 @@ class _DetailItemState extends State<DetailItem> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Color(0xFF488B66), Color(4284859275)],
+                    colors: [Color(4294565598), Color(4294565598)],
                   ),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(20),
@@ -108,7 +111,7 @@ class _DetailItemState extends State<DetailItem> {
                   ),
                   boxShadow: [
                     BoxShadow(
-                        color: Color(4291751385),
+                        color: Color(4294702324),
                         offset: Offset(0, 20),
                         spreadRadius: 4,
                         blurRadius: 20.0),
@@ -148,7 +151,7 @@ class _DetailItemState extends State<DetailItem> {
                         gradient: LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
-                          colors: [Color(0xFF488B66), Color(4284859275)],
+                          colors: [Color(4294945450), Color(4294565598)],
                         ),
                         borderRadius: BorderRadius.all(
                          Radius.circular(16),
@@ -306,7 +309,7 @@ class _DetailItemState extends State<DetailItem> {
                               itemSize: 25.0,
                               direction: Axis.horizontal,
                             ),
-                            Text('  ' + widget.product.rating.toString() + '/5(' +widget.product.listFeedBack.length.toString()+ ' đánh giá )' ),
+                            Text('  ' + widget.product.rating.toString() + '/5 (' +widget.product.listFeedBack.length.toString()+ ' đánh giá )' ),
                           ],
                         ),
 
@@ -385,7 +388,7 @@ class _CommentItemState extends State<CommentItem>{
       children: [
         Row(children: [
           Positioned(
-            bottom: 0,
+            bottom: 10,
             left: 15,
             child: Row(
               children: <Widget>[
@@ -393,7 +396,6 @@ class _CommentItemState extends State<CommentItem>{
                   width:  MediaQuery.of(context).size.width* 0.3,
                   child: Column(
                     children: [
-
                       ClipRRect(
                           borderRadius:
                           BorderRadius.all(Radius.circular(20.0)),
@@ -403,7 +405,6 @@ class _CommentItemState extends State<CommentItem>{
                             height: 50,
                             fit: BoxFit.cover,
                           )),
-                      Text(widget.feedBackItem.userName),
                     ],
                   ),
                 ),
@@ -413,6 +414,16 @@ class _CommentItemState extends State<CommentItem>{
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
+                        Container(
+                          child: Row(children: <Widget>[
+                            Text(widget.feedBackItem.userName, style: TextStyle(fontSize: 16),),
+                          ]),
+                        ),
+                        Container(
+                          child: Row(children: <Widget>[
+                            Text("")
+                          ]),
+                        ),
                         Row(
                           children: [
                             RatingBarIndicator(

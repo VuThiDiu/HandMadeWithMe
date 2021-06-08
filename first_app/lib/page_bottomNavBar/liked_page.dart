@@ -92,7 +92,7 @@ class _LikedPageState extends State<LikedPage> {
                     product.setlistImage(listImage);
 
 
-                  }else product.setlistImage(['https://cdn.shopify.com/s/files/1/0212/1030/0480/products/BraidedMoneyTree-Full_560x560_crop_center.jpg?v=1605012647']);
+                  }else product.setlistImage(['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGPL6RMbqGSqWK6sRGp537hVDb2q2fklxFrQ&usqp=CAU']);
                   newList.add(product);
                   if(newList.length == count){
                     setState(() {
@@ -123,7 +123,7 @@ class _LikedPageState extends State<LikedPage> {
         height: 50.0,
         width: MediaQuery.of(context).size.width*0.49,
         decoration: BoxDecoration(
-          color: Color(4291751385),
+          color: Color(4294565598),
         ),
         child: FlatButton(
           onPressed: () {},
@@ -131,7 +131,7 @@ class _LikedPageState extends State<LikedPage> {
           child: Text(
             _options[index],
             style: TextStyle(
-              color: _selectedIndex == index ? Colors.black : Color(0xFF407C5A),
+              color: _selectedIndex == index ? Colors.black : Colors.black,
               fontSize: 16,
               fontWeight: FontWeight.w700,
             ),
@@ -146,15 +146,15 @@ class _LikedPageState extends State<LikedPage> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
             toolbarHeight: 70,
-            title: Text("Lượt thích", style: TextStyle(fontSize: 23),),
+            title: Text("Lượt thích", style: TextStyle(fontSize: 23, color: Colors.black),),
            // leadingWidth: 20,
             centerTitle: true,
-            backgroundColor: Color(0xFF407C5A),
+            backgroundColor: Color(4294945450),
             actions: [
               IconButton(
                 icon: Icon(
                   FontAwesomeIcons.bell,
-                  color: Colors.white,
+                  color: Colors.black,
                   size: 27.0,
                 ),
                 onPressed: () {},

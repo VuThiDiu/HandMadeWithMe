@@ -24,7 +24,7 @@ class _regWelState extends State<regWel> {
             height: MediaQuery.of(context).size.height,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color:  Color.fromRGBO(250, 202, 212, 1),
+              color:  Color(4294565598),
             ),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -36,7 +36,7 @@ class _regWelState extends State<regWel> {
                   Text('Create New Account !!!',
                     style: TextStyle(
                       fontFamily: 'AkayaTelivigala',
-                      color: Color.fromRGBO(	246, 117, 145, 1),
+                      color: Color(4294344335),
                       fontSize: 30,
                     ),
                   ),

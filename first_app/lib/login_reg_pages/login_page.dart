@@ -79,9 +79,9 @@ class _loginPageState extends State<loginPage> {
                             //
                             //   ],
                             // ),
-                             Text("Sign In", style: TextStyle(
+                             Text("Sign in", style: TextStyle(
                                fontFamily: 'AkayaTelivigala',
-                               color: Color.fromRGBO(254, 185, 185, 1),
+                               color: Color(4294344335),
                                fontSize: 35,
                              ), ),
                            SizedBox(height: 50,),
@@ -101,7 +101,7 @@ class _loginPageState extends State<loginPage> {
                           Flexible(
                                 child: RaisedButton(
                                   //padding: EdgeInsets.fromLTRB(150, 12, 150, 12),
-                                  color: Color.fromRGBO(254, 185, 185, 1),
+                                  color: Color(4294344335),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(Radius.circular(20)),
                                   ),
@@ -127,7 +127,7 @@ class _loginPageState extends State<loginPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text("Don't have an account?  ",
-                                      style: TextStyle(color: Color.fromRGBO(254, 185, 185, 1), fontSize: 18),
+                                      style: TextStyle(color: Color(4294344335), fontSize: 18),
                                     ),
                                     InkWell(
                                       onTap: () {
@@ -168,11 +168,12 @@ class _loginPageState extends State<loginPage> {
       ),
       child: TextFormField(
         controller: controller,
-        style: TextStyle(color: Color.fromRGBO(254, 185, 185, 1)),
+        keyboardType: TextInputType.number,
+        style: TextStyle(color: Color(4294344335)),
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(254, 185, 185, 1)),
-          prefixIcon: Icon(icon, color: Color.fromRGBO(254, 185, 185, 1)),
+          hintStyle: TextStyle(fontSize: 20, color: Color(4294344335)),
+          prefixIcon: Icon(icon, color: Color(4294344335)),
         ),
         onChanged: (value) {
           if (value[0] == "0") {
@@ -234,11 +235,12 @@ class _loginPageState extends State<loginPage> {
               return AlertDialog(
                 title: Text("Enter Code",
                   style: TextStyle(
-                      color: Color.fromRGBO(254, 185, 185, 1),
+                      color: Color(4294344335),
                       fontSize: 20
                   ),),
                 content: TextField(
                   controller: txt,
+                  keyboardType: TextInputType.number,
                   onChanged: (val) {
                     smsCode = val;
                     if (val.length == 6) {
@@ -257,7 +259,7 @@ class _loginPageState extends State<loginPage> {
                   autofocus: true,
                   maxLength: 6,
                   style: TextStyle(
-                    color: Color.fromRGBO(254, 185, 185, 1),
+                    color: Color(4294344335),
                     fontSize: 30,
                     letterSpacing: 23,
 
@@ -282,7 +284,6 @@ class _loginPageState extends State<loginPage> {
           });
         }
         else{
-          print("signed in ");
           Navigator.pop(context);
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => SummaryPage(user: value)));

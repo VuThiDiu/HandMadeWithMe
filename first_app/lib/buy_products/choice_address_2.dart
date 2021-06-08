@@ -21,9 +21,12 @@ class _ChoiceAddressState extends State<ChoiceAddress> {
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.black
+          ),
           title: Text(
             "Địa chỉ",
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 20, color: Colors.black),
           ),
           centerTitle: true,
           flexibleSpace: Container(
@@ -31,7 +34,7 @@ class _ChoiceAddressState extends State<ChoiceAddress> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Color(4281755726), Color(0xFF488B66)],
+              colors: [Color(4294945450), Color(4294945450)],
             ),
           )),
         ),
@@ -114,7 +117,7 @@ class _AddressItemState extends State<AddressItem> {
                     },
                     child: Text(
                       "OK",
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16, color: Color(4294344335)),
                     ))
               ],
             );
@@ -162,7 +165,7 @@ class _AddressItemState extends State<AddressItem> {
                     },
                     child: Text(
                       "Sửa",
-                      style: TextStyle(color: Color(0xFF488B66), fontSize: 17),
+                      style: TextStyle(color: Color(4294344335), fontSize: 17),
                     ))
               ],
             ),

@@ -51,13 +51,13 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>{
     // TODO: implement build
     return this.viewResult ? Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF407C5A),
+        backgroundColor: Color(4294945450),
         iconTheme: IconThemeData(
-          color: Colors.white,
+          color: Colors.black,
         ),
         title: Text(
           'Sản phẩm đã mua',
-          style:TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          style:TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -101,7 +101,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>{
                   horizontal: 1, vertical: 1,
                 ),
                 decoration: BoxDecoration(
-                  color: Color(0xFF407C5A),
+                  color: Color(4294565598),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(16),
                     bottomRight: Radius.circular(16),

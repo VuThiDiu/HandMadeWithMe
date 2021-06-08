@@ -56,9 +56,12 @@ class _EditAddressState extends State<EditAddress> {
 
     return Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.black
+          ),
           title: Text(
             "Sửa địa chỉ",
-            style: TextStyle(fontSize: 21),
+            style: TextStyle(fontSize: 21, color: Colors.black),
           ),
           centerTitle: true,
           toolbarHeight: 65,
@@ -67,7 +70,7 @@ class _EditAddressState extends State<EditAddress> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Color(4281755726), Color(0xFF488B66)],
+              colors: [Color(4294945450), Color(4294945450)],
             ),
           )),
         ),
@@ -182,7 +185,7 @@ class _EditAddressState extends State<EditAddress> {
                     _showAlertDialog(context);
                   },
                   color: Colors.white,
-                  child: Text("Xóa địa chỉ",style: TextStyle(fontSize: 18, color: Color(0xFF488B66)),),
+                  child: Text("Xóa địa chỉ",style: TextStyle(fontSize: 18, color: Color(4294344335)),),
                   ),),
               SizedBox(height: 25,),
               FlatButton(onPressed: (){
@@ -204,8 +207,8 @@ class _EditAddressState extends State<EditAddress> {
               },
                 padding: EdgeInsets.all(15),
                 minWidth: 410,
-                child: Text("SỬA ĐỊA CHỈ", style: TextStyle(color: Colors.white, fontSize: 18),),
-                color: Color(0xFF488B66),
+                child: Text("SỬA ĐỊA CHỈ", style: TextStyle(color: Colors.black, fontSize: 18),),
+                color: Color(4294344335),
               )
             ])),
     ));

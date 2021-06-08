@@ -13,15 +13,18 @@ class _EditNameState extends State<EditName> {
       appBar: AppBar(
         toolbarHeight: 70,
         centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
         title: Text('Sửa tên',
-          style: TextStyle(fontSize: 22),),
-        backgroundColor: Color(0xFF407C5A),
+          style: TextStyle(fontSize: 22, color: Colors.black),),
+        backgroundColor: Color(4294945450),
         actions: [
           FlatButton(
               onPressed: (){
                   Navigator.pop(context, this.newName);
               },
-              child: Text("Lưu", style: TextStyle( fontSize: 20, color: Colors.white),)),
+              child: Text("Lưu", style: TextStyle( fontSize: 20, color: Colors.black),)),
         ],
       ),
       body: Container(

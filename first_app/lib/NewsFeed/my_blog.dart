@@ -48,7 +48,7 @@ class _MyBlogState extends State<MyBlog> {
       child: Theme(
         data: ThemeData(
             appBarTheme: AppBarTheme(
-                backgroundColor: Color(0xFF407C5A),
+                backgroundColor: Color(4294883769),
                 actionsIconTheme: IconThemeData(color: Colors.white)
             )
         ),
@@ -94,7 +94,7 @@ class _MyBlogState extends State<MyBlog> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               FloatingActionButton(
-                backgroundColor: Color(0xFF407C5A),
+                backgroundColor: Color(4294883769),
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => CreateBlog(user: widget.user,))).then((value){
                     if(value!=null)

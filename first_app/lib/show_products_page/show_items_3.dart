@@ -35,23 +35,8 @@ class _ShowItemState extends State<ShowItem> {
         height: 50.0,
         width: 100,
         decoration: BoxDecoration(
-          color: Color(4291751385),
+          color: Color(4294565598),
         ),
-
-        // child: FlatButton(
-        //   onPressed: () {},
-        //   //padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-        //   child: Text(
-        //     _options[index],
-        //     style: TextStyle(
-        //       color: _selectedIndex == index
-        //           ? Colors.black
-        //           : Color(0xFF407C5A),
-        //       fontSize: 16,
-        //       fontWeight: FontWeight.w700,
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }
@@ -69,16 +54,6 @@ class _ShowItemState extends State<ShowItem> {
                             height: 600,
                             child: Column(
                               children: <Widget>[
-                                // Row(
-                                //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                //   children: _options
-                                //       .asMap()
-                                //       .entries
-                                //       .map(
-                                //         (MapEntry map) => _buildMenu(map.key),
-                                //   )
-                                //       .toList(),
-                                // ),
                                 Expanded(
                                   child: GridView.builder(
                                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -142,7 +117,7 @@ class _ShowItemState extends State<ShowItem> {
                 });
                 product.setlistImage(imageList);
               }
-              else product.setlistImage(['https://cdn.shopify.com/s/files/1/0212/1030/0480/products/BraidedMoneyTree-Full_560x560_crop_center.jpg?v=1605012647']);
+              else product.setlistImage(['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGPL6RMbqGSqWK6sRGp537hVDb2q2fklxFrQ&usqp=CAU']);
               newList.add(product);
               if(newList.length == count){
                 setState(() {

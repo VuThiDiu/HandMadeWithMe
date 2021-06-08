@@ -17,13 +17,13 @@ class  _ProductDetailState extends State<ProductDetail>{
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF407C5A),
+          backgroundColor: Color(4294945450),
           iconTheme: IconThemeData(
-            color: Colors.white,
+            color: Colors.black,
           ),
           title: Text(
             'Sản phẩm của tôi',
-            style:TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+            style:TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           centerTitle: true,
         ),

@@ -56,7 +56,7 @@ class FullMapState extends State<FullMap> {
               Row(
                 children: [
                   BackButton(
-                    color: Color(4281755726),
+                    color: Color(4294945450),
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -105,8 +105,8 @@ class FullMapState extends State<FullMap> {
                     onPressed: (){
                      Navigator.pop(context, place.description.toString());
                     },
-                    color: Color(4281755726),
-                    child: Text("ĐỒNG Ý", style: TextStyle(color: Colors.white, fontSize: 22),),
+                    color: Color(4294344335),
+                    child: Text("ĐỒNG Ý", style: TextStyle(color: Colors.black, fontSize: 22),),
                   ))
 
             ]));

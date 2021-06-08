@@ -50,7 +50,7 @@ class _SummaryNewsState extends State<SummaryNews> {
       child: Theme(
         data: ThemeData(
             appBarTheme: AppBarTheme(
-                backgroundColor: Color(0xFF407C5A),
+                backgroundColor: Color(4294945450),
                 actionsIconTheme: IconThemeData(color: Colors.white)
             )
         ),
@@ -58,40 +58,8 @@ class _SummaryNewsState extends State<SummaryNews> {
           appBar: AppBar(
             toolbarHeight: 100,
             centerTitle: true,
-            title: Text('Thỏa sức sáng tạo', style: TextStyle(fontSize: 28),),
+            title: Text('Thỏa sức sáng tạo', style: TextStyle(fontSize: 28, color: Colors.black),),
             automaticallyImplyLeading: false,
-
-            // actions: <Widget>[
-            //   IconButton(icon: Icon(Icons.search, size: 28,), onPressed: (){
-            //
-            //   })
-            // ],
-            // bottom: TabBar(
-            //   isScrollable: true,
-            //   indicatorColor: Colors.white,
-            //   tabs: <Widget>[
-            //     Padding(
-            //       padding: const EdgeInsets.all(8.0),
-            //       child: Text("Hoa hồng", style: TextStyle(fontSize: 18)),
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.all(8.0),
-            //       child: Text("Hoa cúc", style: TextStyle(fontSize: 18)),
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.all(8.0),
-            //       child: Text("Hoa lan", style: TextStyle(fontSize: 18)),
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.all(8.0),
-            //       child: Text("Bonsai", style: TextStyle(fontSize: 18)),
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.all(8.0),
-            //       child: Text('Cây ăn quả', style: TextStyle(fontSize: 18),),
-            //     ),
-            //   ],
-            // ),
           ),
           body: FutureBuilder(
             future: loadingData(),
@@ -107,49 +75,24 @@ class _SummaryNewsState extends State<SummaryNews> {
                       },
                       // separatorBuilder: (context, index) => SizedBox(height: 16)
                     ));
-                // child: TabBarView(
-                //   children: <Widget>[
-                //     ListView.separated(
-                //       ,),
-                //   ],
-                //),
               }else
                 return Loading();
             },
           ),
-
-
-          /*body: Container(
-                        color: Colors.blueGrey[50],
-                        child: TabBarView(
-                          children: <Widget>[
-                            ListView.separated(
-                              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 13),
-                              itemCount: 5,
-                              itemBuilder: (context,index) {
-                                //return _buildArticleItem(snapshot.data, index);
-                              },
-                              separatorBuilder: (context, index) => SizedBox(height: 16),),
-                          ],
-                        ),
-                      ),*/
           floatingActionButton: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               FloatingActionButton(
-                backgroundColor: Color(0xFF407C5A),
+                backgroundColor: Color(4294945450),
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => CreateBlog(user: widget.user,)));
                 },
-                child: Icon(FontAwesomeIcons.pen),)
+                child: Icon(FontAwesomeIcons.pen))
             ],
           ),
         ),
       ),
     );
-    //       }
-    //       else return Loading();
-    // });
 
   }
   Widget _buildArticleItem(List articles,int index) {
@@ -161,7 +104,7 @@ class _SummaryNewsState extends State<SummaryNews> {
             Container(
               width: 90,
               height: 90,
-              color: Color(4291751385),
+              color: Color(4294565598 ),
             ),
             FlatButton(
               onPressed: () {

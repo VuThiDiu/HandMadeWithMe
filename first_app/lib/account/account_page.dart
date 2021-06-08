@@ -6,12 +6,12 @@ import 'package:first_app/NewsFeed/create_blog.dart';
 import 'package:first_app/NewsFeed/my_blog.dart';
 import 'package:first_app/Sell/MyProduct.dart';
 import 'package:first_app/account/edit_info.dart';
+import 'package:first_app/buy_products/show_cart_0.dart';
 import 'package:first_app/login_reg_pages/loading.dart';
 import 'package:first_app/login_reg_pages/login_page.dart';
 import 'package:first_app/models/user.dart';
 import 'package:first_app/Sell/addProduct.dart';
 import 'package:first_app/my_orders/my_orders_screen.dart';
-import 'package:first_app/services/database.dart';
 import 'package:first_app/services/handbookService.dart';
 import 'package:first_app/services/productService.dart';
 import 'package:flutter/cupertino.dart';
@@ -58,312 +58,371 @@ class _AccountPageState extends State<AccountPage> {
     return this.viewResult ? Scaffold(
         body: Column(
             children: [
+              SizedBox(height: 40),
               Container(
-                height: 330,
+                height: 180,
                 child: Stack(
                     children: [
-                      Image.asset(
-                        "assets/bg_account.jpg",
-                        height: 310,
-                        width: screenWidth,
-                        fit: BoxFit.cover,
-                      ),
-                      Container(
-                        height: 330,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.center,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Colors.transparent,
-                                  Color(4291751385)
-                                ])),
-                      ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 50.0),
-                        child: Center(
-                          child: Column(
-                            children: [
+                        padding: const EdgeInsets.only(top: 0.0),
+                        child: Row(
+                          children: [
+                            SizedBox(width: 20,),
+                          Column(
+                            children:  [
+                              //SizedBox(width: 100,),
                               Container(
-                                decoration: BoxDecoration(boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 5,
-                                      spreadRadius: 2)
-                                ]),
                                 child: ClipRRect(
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(20.0)),
                                     child: Image.network(
                                       widget.user.getUrlImage(),
-                                      width: 130,
-                                      height: 130,
+                                      width: 150,
+                                      height: 150,
                                       fit: BoxFit.cover,
                                     )),
                               ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Text(
-                                widget.user.getUserName(),
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 23,
-                                    fontWeight: FontWeight.w700),
-                              )
                             ],
                           ),
+                            SizedBox(width: 20,),
+                            Column(
+                              children: [
+                                SizedBox(height: 50,),
+                                Text(
+                                  widget.user.getUserName(),
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(254, 142, 142,1),
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                SizedBox(height: 20,),
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Text("Bài đăng", style: TextStyle(fontSize: 18, color: Color.fromRGBO(254, 142, 142, 1)),),
+                                        Text(
+                                          this.posted.toString(),
+                                          style: TextStyle(fontSize: 18, color: Color.fromRGBO(254, 142, 142, 1)),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(width: 30,),
+                                    Column(
+                                      children: [
+                                        Text("Bài viết",  style: TextStyle(fontSize: 18, color: Color.fromRGBO(254, 142, 142, 1))),
+                                        Text(
+                                          this.article.toString(),
+                                          style: TextStyle(fontSize: 18, color: Color.fromRGBO(254, 142, 142, 1)),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            )
+
+                          ]
                         ),
                       ),
-                      Positioned(
-                        top: 250,
-                        left: (screenWidth - 350) / 2,
-                        child: Container(
-                          width: 350,
-                          height: 80,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black12,
-                                  blurRadius: 5,
-                                  spreadRadius: 5),
-                            ],
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                width:170 ,
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        this.posted.toString(),
-                                        style: TextStyle(fontSize: 24),
-                                      ),
-                                      Text(
-                                        "Bài đăng",
-                                        style: TextStyle(fontSize: 16),
-                                      ),
-                                    ]),
-                              ),
-                              VerticalDivider(
-                                thickness: 1.5,
-                              ),
-                              Container(
-                                width: 150,
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        this.article.toString(),
-                                        style: TextStyle(fontSize: 24),
-                                      ),
-                                      Text(
-                                        "Bài viết",
-                                        style: TextStyle(fontSize: 16),
-                                      ),
-                                    ]),
-                              ),
-                            ],
-                          ),
-                        ),
-                      )
                     ]),
               ),
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color(4291751385)
+                        color: Color(4294896101)
                     ),
                     child: Column(
                         children: [
                           SizedBox(height: 15,),
+                          Row(
+                            children: [
+                              SizedBox(width: 12,),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.45,
+                                  height: 120,
+                                  child:  ElevatedButton(
+                                    onPressed: () async {
+                                      Navigator.push(context, MaterialPageRoute(
+                                          builder: (context) =>
+                                              EditInfo(user: widget.user))).then((value) {
+                                        if(value!=null){
+                                          setState(() {
+                                            widget.user = value;
+                                          });
+                                        }
+                                      });
+                                    },
+                                    child: Column(
+                                      children: [
+                                        Icon(Icons.account_circle_rounded, color: Color.fromRGBO(254, 142, 142,1),size: 60,),
+                                        Text(" Thông tin cá", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                        Text("nhân", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                      ],
+                                    ),
+                                    style: ButtonStyle(
+                                      backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                          RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(20),
+                                              //side: BorderSide(color: Colors.red)
+                                          )
+                                    ),
+                                        shadowColor: MaterialStateProperty.all<Color>(Colors.white24)),
+                                    )),
+                              SizedBox(width: 12,),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.45,
+                                  height: 120,
+                                  child:  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (
+                                          context) => showCart(widget.user)));
+                                    },
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 5,),
+                                        Icon(Icons.add_shopping_cart_outlined, color: Color.fromRGBO(254, 142, 142,1),size: 60,),
+                                       // SizedBox(height: 12,),
+                                        Text("Giỏ hàng ", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                      ],
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(20),
+                                              //side: BorderSide(color: Colors.red)
+                                            )
+                                        ),
+                                        shadowColor: MaterialStateProperty.all<Color>(Colors.white24)),
+                                  )),
+                            ],
+                          ),
+                          SizedBox(height: 15,),
                           Container(
                             height: 2,
-                            decoration: BoxDecoration(color: Colors.white),
-                          ),
-                          FlatButton(onPressed: () async {
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context) =>
-                                    EditInfo(user: widget.user))).then((value) {
-                              if(value!=null){
-                                setState(() {
-                                  widget.user = value;
-                                });
-                              }
-                            });
-                          },
-                              child: Row(
-                                children: [
-                                  Icon(Icons.account_circle_rounded),
-                                  Text(" Thông tin cá nhân", style: TextStyle(
-                                      fontSize: 20),),
-                                  new Spacer(),
-                                  Text("Chỉnh sửa", style: TextStyle(
-                                      color: Colors.black54, fontSize: 15),),
-                                  Icon(Icons.arrow_forward_ios)
-                                ],
-                              )
-                          ),
-                          Container(
-                            height: 2,
-                            decoration: BoxDecoration(color: Colors.white),
-                          ),
-                          FlatButton(onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (
-                                context) => AddProduct(user: widget.user)));
-                          },
-                              child: Row(
-                                children: [
-                                  Image.asset("assets/sell_icon.png", width: 20,
-                                      fit: BoxFit.cover),
-                                  Text(" Đăng bài bán hàng", style: TextStyle(
-                                      fontSize: 20),),
-                                  new Spacer(),
-                                  Text("Thêm", style: TextStyle(
-                                      color: Colors.black54, fontSize: 15),),
-                                  Icon(Icons.arrow_forward_ios)
-                                ],
-                              )
-                          ),
-                          Container(
-                            height: 2,
-                            decoration: BoxDecoration(color: Colors.white),
-                          ),
-                          FlatButton(onPressed: () {
-                            Navigator.push(context,  MaterialPageRoute(builder: (context) => MyProduct(user: widget.user,)));
-                          },
-                              child: Row(
-                                children: [
-                                  Icon(Icons.assignment),
-                                  Text(" Bài đã đăng", style: TextStyle(
-                                      fontSize: 20),),
-                                  new Spacer(),
-                                  Text("Chỉnh sửa", style: TextStyle(
-                                      color: Colors.black54, fontSize: 15),),
-                                  Icon(Icons.arrow_forward_ios)
-                                ],
-                              )
-                          ),
-                          Container(
-                            height: 2,
-                            decoration: BoxDecoration(color: Colors.white),
-                          ),
-                          FlatButton(onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (
-                                context) => CreateBlog(user: widget.user,)));
-                          },
-                              child: Row(
-                                children: [
-                                  // Image.asset("assets/sell_icon.png", width: 20,
-                                  //     fit: BoxFit.cover),
-                                  Icon(Icons.wb_incandescent_rounded),
-                                  Text("Chia sẻ cẩm nang", style: TextStyle(
-                                      fontSize: 20),),
-                                  new Spacer(),
-                                  Text("Thêm", style: TextStyle(
-                                      color: Colors.black54, fontSize: 15),),
-                                  Icon(Icons.arrow_forward_ios)
-                                ],
-                              )
-                          ),
-                          Container(
-                            height: 2,
-                            decoration: BoxDecoration(color: Colors.white),
-                          ),
-                          FlatButton(onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (
-                                context) =>
-                                MyBlog(user: widget.user,)));
-                          },
-                              child: Row(
-                                children: [
-                                  // Image.asset("assets/sell_icon.png", width: 20,
-                                  //     fit: BoxFit.cover),
-                                  Icon(Icons.web_sharp),
-                                  Text("Các bài viết", style: TextStyle(
-                                      fontSize: 20),),
-                                  new Spacer(),
-                                  Text("Thêm", style: TextStyle(
-                                      color: Colors.black54, fontSize: 15),),
-                                  Icon(Icons.arrow_forward_ios)
-                                ],
-                              )
-                          ),
-                          Container(
-                            height: 2,
-                            decoration: BoxDecoration(color: Colors.white),
-                          ),
-                          Container(
-                            height: 2,
-                            decoration: BoxDecoration(color: Colors.white),
-                          ),
-                          FlatButton(onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (
-                                context) =>
-                                MyOrdersScreen(user: widget.user,)));
-                          },
-                              child: Row(
-                                children: [
-                                  Icon(FontAwesomeIcons.history, size: 19),
-                                  Text(" Lịch sử mua hàng", style: TextStyle(
-                                      fontSize: 20),),
-                                  new Spacer(),
-                                  Text("Xem", style: TextStyle(
-                                      color: Colors.black54, fontSize: 15),),
-                                  Icon(Icons.arrow_forward_ios)
-                                ],
-                              )
-                          ),
-                          Container(
-                            height: 2,
-                            decoration: BoxDecoration(color: Colors.white),
-                          ),
-                          FlatButton(onPressed: () {},
-                              child: Row(
-                                children: [
-                                  Image.asset("assets/star.png", width: 25,
-                                    height: 25,
-                                    fit: BoxFit.cover,),
-                                  Text(" Đánh giá cửa hàng", style: TextStyle(
-                                      fontSize: 20),),
-                                  new Spacer(),
-                                  Text("Chỉnh sửa", style: TextStyle(
-                                      color: Colors.black54, fontSize: 15),),
-                                  Icon(Icons.arrow_forward_ios)
-                                ],
-                              )
-                          ),
-                          Container(
-                            height: 7,
                             decoration: BoxDecoration(color: Colors.white),
                           ),
                           SizedBox(height: 15,),
-                          FlatButton(onPressed: () {
-                            FirebaseAuth.instance.signOut();
-                            Navigator.push(context, MaterialPageRoute(builder: (
-                                context) => loginPage()));
-                          },
-                            padding: EdgeInsets.zero,
-                            child:
-                            Text("Đăng xuất", style: TextStyle(fontSize: 24),),
+                          Row(
+                            children: [
+                              SizedBox(width: 12,),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.45,
+                                  height: 120,
+                                  child:  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (
+                                          context) => AddProduct(user: widget.user)));
+                                    },
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 5,),
+                                        Image.asset("assets/sell_icon.png", width: 50,
+                                            fit: BoxFit.cover,
+                                            color: Color.fromRGBO(254, 142, 142,1)),
+                                        SizedBox(height: 12,),
+                                        Text("Đăng bài bán", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                        Text("hàng ", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                      ],
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(20),
+                                              //side: BorderSide(color: Colors.red)
+                                            )
+                                        ),
+                                        shadowColor: MaterialStateProperty.all<Color>(Colors.white24)),
+                                  )),
+                              SizedBox(width: 12,),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.45,
+                                  height: 120,
+                                  child:  ElevatedButton(
+                                     onPressed: () {
+                                        Navigator.push(context,  MaterialPageRoute(builder: (context) => MyProduct(user: widget.user,)));
+                                      },
+                                    child: Column(
+                                      children: [
+                                        Icon(Icons.assignment, color: Color.fromRGBO(254, 142, 142,1),size: 60,),
+                                        SizedBox(height: 10,),
+                                        Text("Bài đã đăng ", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                      ],
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(20),
+                                              //side: BorderSide(color: Colors.red)
+                                            )
+                                        ),
+                                        shadowColor: MaterialStateProperty.all<Color>(Colors.white24)),
+                                  )),
+
+                            ],
                           ),
-                          // Positioned(
-                          //   child: FlatButton(onPressed: (){
-                          //     Database().deleteUser(widget.user.getUid());
-                          //     FirebaseAuth.instance.currentUser().then((value){
-                          //       value.delete();
-                          //     });
-                          //     Navigator.pop(context);
-                          //   },
-                          //     padding: EdgeInsets.zero,
-                          //     child:
-                          //     Text("Yêu cầu hủy tài khoản", style: TextStyle(
-                          //         fontSize: 17, color: Colors.black54),),
-                          //   ),)
+
+                          SizedBox(height: 15,),
+
+                          Container(
+                            height: 2,
+                            decoration: BoxDecoration(color: Colors.white),
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
+                            children: [
+                              SizedBox(width: 12,),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.45,
+                                  height: 120,
+                                  child:  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (
+                                          context) => CreateBlog(user: widget.user,)));
+                                    },
+                                    child: Column(
+                                      children: [
+                                        Icon(Icons.wb_incandescent_rounded, color: Color.fromRGBO(254, 142, 142,1),size: 60,),
+                                        Text("Chia sẻ kỹ ", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                        Text("năng", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                      ],
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(20),
+                                              //side: BorderSide(color: Colors.red)
+                                            )
+                                        ),
+                                        shadowColor: MaterialStateProperty.all<Color>(Colors.white24)),
+                                  )),
+                              SizedBox(width: 12,),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.45,
+                                  height: 120,
+                                  child:  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (
+                                          context) =>
+                                          MyBlog(user: widget.user,)));
+                                    },
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 5,),
+                                        Icon(Icons.web_outlined, color: Color.fromRGBO(254, 142, 142,1),size: 60,),
+                                        //SizedBox(height: 8,),
+                                        Text("Các bài viết", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                      ],
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(20),
+                                              //side: BorderSide(color: Colors.red)
+                                            )
+                                        ),
+                                        shadowColor: MaterialStateProperty.all<Color>(Colors.white24)),
+                                  )),
+                            ],
+                          ),
+                          SizedBox(height: 15,),
+                          Container(
+                            height: 2,
+                            decoration: BoxDecoration(color: Colors.white),
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
+                            children: [
+                              SizedBox(width: 12,),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.45,
+                                  height: 120,
+                                  child:  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (
+                                          context) =>
+                                          MyOrdersScreen(user: widget.user,)));
+                                    },
+                                    child: Column(
+                                      children: [
+                                        Icon(Icons.history, color: Color.fromRGBO(254, 142, 142,1),size: 60,),
+                                        Text(" Lịch sử mua ", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                        Text("hàng", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                      ],
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(20),
+                                              //side: BorderSide(color: Colors.red)
+                                            )
+                                        ),
+                                        shadowColor: MaterialStateProperty.all<Color>(Colors.white24)),
+                                  )),
+                              SizedBox(width: 12,),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.45,
+                                  height: 120,
+                                  child:  ElevatedButton(
+                                    onPressed: () {
+                                      FirebaseAuth.instance.signOut();
+                                      Navigator.push(context, MaterialPageRoute(builder: (
+                                          context) => loginPage()));
+                                    },
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 5,),
+                                        Icon(Icons.west_rounded, color: Color.fromRGBO(
+                                            254, 142, 142, 1.0),size: 60,),
+                                        //SizedBox(height: 12,),
+                                        Text("Đăng xuất", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color.fromRGBO(254, 142, 142,1)),),
+                                      ],
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(20),
+                                              //side: BorderSide(color: Colors.red)
+                                            )
+                                        ),
+                                        shadowColor: MaterialStateProperty.all<Color>(Colors.white24)),
+                                  )),
+                            ],
+                          ),
+                          SizedBox(height: 15,),
                         ]),
                   ),
                 ),

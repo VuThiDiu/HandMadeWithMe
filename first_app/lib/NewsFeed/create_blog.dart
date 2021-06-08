@@ -9,6 +9,7 @@ import 'package:first_app/models/articles.dart';
 import 'package:first_app/models/handBook.dart';
 import 'package:first_app/models/plant.dart';
 import 'package:first_app/models/user.dart';
+import 'package:first_app/services/category_service.dart';
 import 'package:first_app/services/database.dart';
 import 'package:first_app/services/handbookService.dart';
 import 'package:first_app/services/plant_service.dart';
@@ -44,16 +45,18 @@ class _CreateBlogState extends State<CreateBlog> {
   @override
   void initState() {
     super.initState();
-    PlantService().getPlants().then((QuerySnapshot docs){
+    CategoryService().getCategories().then((QuerySnapshot docs){
       if(docs.documents.isNotEmpty){
         setState(() {
           this.viewResult = true;
         });
         docs.documents.forEach((element) {
-          this.namePlants.add(element.data["plantName"]);
+          this.namePlants.add(element.data["categoryName"]);
         });
       }else{
-        print("Empty");
+        setState(() {
+          this.viewResult = true;
+        });
       }
     });
   }
@@ -64,8 +67,8 @@ class _CreateBlogState extends State<CreateBlog> {
         toolbarHeight: 70,
         centerTitle: true,
         title: Text('Bài viết của tôi',
-          style: TextStyle(fontSize: 22),),
-        backgroundColor: Color(0xFF407C5A),
+          style: TextStyle(fontSize: 22, color: Colors.black),),
+        backgroundColor: Color(4294945450),
         actions: [
           FlatButton(
               onPressed: (){
@@ -109,12 +112,12 @@ class _CreateBlogState extends State<CreateBlog> {
 
                 }
               },
-              child: Text("Lưu", style: TextStyle( fontSize: 20, color: Colors.white),)),
+              child: Text("Lưu", style: TextStyle( fontSize: 20, color: Colors.black),)),
         ],
       ),
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.blueGrey[50],
+          color: Colors.white,
           height: 1000,
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -146,7 +149,7 @@ class _CreateBlogState extends State<CreateBlog> {
                         maxLines: null,
                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                           decoration: InputDecoration(
-                            hintText: "Tiêu đề",
+                            hintText: "Tiêu đề bài viết",
                           ),
                           onChanged: (val) {
                             title = val;
@@ -157,7 +160,7 @@ class _CreateBlogState extends State<CreateBlog> {
                   Row(
                       children:<Widget>[
                         Text(
-                          ' Phân loại cây ',
+                          ' Thể loại ',
                           style: TextStyle(fontSize: 20),
                         ),
                       ],

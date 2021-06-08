@@ -39,7 +39,7 @@ class SuggestionItem extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                       boxShadow: [
                         BoxShadow(
-                            color: Color(4291751385),
+                            color: Color(4294565598),
                             offset: Offset(0, 140),
                             spreadRadius: 0,
                             blurRadius: 100.0),
@@ -89,7 +89,7 @@ class SuggestionItem extends StatelessWidget {
                                   children: [
                                     Text(
                                       listProduct[i].price +'đ',
-                                      style: TextStyle(color: Colors.green[900]),
+                                      style: TextStyle(color: Color(4294344335)),
                                     ),
                                     RichText(
                                         text: TextSpan(

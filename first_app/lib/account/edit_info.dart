@@ -100,9 +100,9 @@ class _EditInfoState extends State<EditInfo> {
 
     return  Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(4294945450),
           iconTheme: IconThemeData(
-            color: Color(0xFF407C5A), //change your color here
+            color: Colors.black, //change your color here
           ),
         title: Text(
           "Chỉnh sửa thông tin",
@@ -127,7 +127,7 @@ class _EditInfoState extends State<EditInfo> {
               },
               child: Text(
                 "Lưu",
-                style: TextStyle(fontSize: 20, color: Color(0xFF407C5A)),
+                style: TextStyle(fontSize: 20, color: Colors.black),
               )),
         ],
       ),
@@ -141,7 +141,7 @@ class _EditInfoState extends State<EditInfo> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Color(4281755726), Color(4284859275)],
+                    colors: [Color(4294565598), Color(4294428888)],
                   ),
                 ),
               ),

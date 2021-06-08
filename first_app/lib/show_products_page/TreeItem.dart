@@ -6,7 +6,7 @@ import 'package:first_app/services/productService.dart';
 import 'package:first_app/show_products_page/detail_item_4.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
 class TreeItem extends StatefulWidget {
   Product product;
   User user;
@@ -49,7 +49,7 @@ class _TreeItemState extends State<TreeItem> {
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                       boxShadow: [
                         BoxShadow(
-                            color: Color(4291751385),
+                            color: Color(4294565598),
                             offset: Offset(0, 140),
                             spreadRadius: 0,
                             blurRadius: 100.0),
@@ -82,7 +82,7 @@ class _TreeItemState extends State<TreeItem> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  widget.product.category,
+                                  widget.product.productName,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
                                   style: TextStyle(
@@ -99,7 +99,7 @@ class _TreeItemState extends State<TreeItem> {
                                   children: [
                                     Text(
                                       widget.product.price+'đ',
-                                      style: TextStyle(color: Colors.green[900]),
+                                      style: TextStyle(color: Color(4294344335)),
                                     ),
                                     RichText(
                                         text: TextSpan(
@@ -142,7 +142,16 @@ class _TreeItemState extends State<TreeItem> {
                                           ),),
                                         ],
                                       )
-                                    ])
+                                    ]),
+                                SizedBox(height: 5,),
+                                Text(
+                                  'Ngày đăng: ' + DateFormat('dd/MM/yyyy').format(DateTime.fromMillisecondsSinceEpoch(widget.product.created.seconds*1000)),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                  ),
+                                ),
                               ]))
                     ],
                   ))

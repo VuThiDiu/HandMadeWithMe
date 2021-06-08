@@ -74,7 +74,7 @@ class _buyCardState extends State<buyCard> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(4281755726), Color(0xFF488B66)],
+            colors: [Color(4294945450), Color(4294945450)],
           ),
         )),
       ),
@@ -141,7 +141,7 @@ class _buyCardState extends State<buyCard> {
             ),
             RaisedButton(
               padding: EdgeInsets.symmetric(vertical: 17, horizontal: 10),
-              color: Color(0xFF488B66),
+              color: Color(4294344335),
               child: Text("Đặt hàng", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),),
               onPressed: () {
                 if(item==null){
@@ -266,7 +266,7 @@ class _buyCardState extends State<buyCard> {
           height: 35,
 
           decoration: BoxDecoration(
-              color: Color(0xFFE6FFEE),
+              color: Color(4294565598),
             boxShadow: [BoxShadow(
               color: Colors.grey,
           ),]),
@@ -363,10 +363,10 @@ class _buyCardState extends State<buyCard> {
             Container(
               height: 1,
               width: double.infinity,
-              color: Color(0xFF488B66),
+              color: Color(4294565598),
             ),
             Container(
-            color: Color(0xFFE6FFEE),
+            color: Color(4294565598),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -487,7 +487,7 @@ class _buyCardState extends State<buyCard> {
               children: [
                 Text("Tổng thanh toán", style: TextStyle(fontSize: 18, color: Colors.black),),
                 Spacer(),
-                Text(totalMoney.toString()+'d', style: TextStyle(fontSize: 18, color: Color(0xFF488B66)))
+                Text(totalMoney.toString()+'d', style: TextStyle(fontSize: 18, color: Color(4294344335)))
               ],
             ),
               ],

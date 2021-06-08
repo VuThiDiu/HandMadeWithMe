@@ -11,18 +11,18 @@ class _EditEmailState extends State<EditEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor:Color(4294945450) ,
         iconTheme: IconThemeData(
-          color: Color(0xFF407C5A), //change your color here
+          color: Colors.black, //change your color here
         ),
-        title: Text("Sửa Email", style: TextStyle(color: Colors.black, fontSize: 22),),
+        title: Text("Sửa Email", style: TextStyle(color: Colors.black, fontSize: 22, ),),
         centerTitle: true,
         actions: [
           FlatButton(
               onPressed: (){
                 Navigator.pop(context, this.newEmail);
               },
-              child: Text("Lưu", style: TextStyle( fontSize: 20, color: Color(0xFF407C5A)),)),
+              child: Text("Lưu", style: TextStyle( fontSize: 20, color: Colors.black),)),
         ],
       ),
       body: Container(

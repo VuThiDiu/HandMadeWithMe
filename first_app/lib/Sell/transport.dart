@@ -20,13 +20,13 @@ class _TransportState extends State<Transport>{
   Widget build (BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF407C5A),
+        backgroundColor: Color(4294945450),
         iconTheme: IconThemeData(
-          color: Colors.yellow,
+          color: Colors.black ,
         ),
         title:  Text(
           'Phí vận chuyển',
-          style: TextStyle(color: Colors.yellow, fontSize: 23, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold),
         ),
         actions: [
           FlatButton(
@@ -42,7 +42,7 @@ class _TransportState extends State<Transport>{
               },
               child: Text(
                 "Lưu",
-                style: TextStyle(fontSize: 20, color: Colors.yellow),
+                style: TextStyle(fontSize: 20, color: Colors.black),
               )
           ),
 
@@ -71,9 +71,9 @@ class _TransportState extends State<Transport>{
                             borderRadius: BorderRadius.circular(10.0),
                             borderSide: BorderSide.none,
                           ),
-                          fillColor: Colors.green,
+                          fillColor: Colors.black45,
                           hintText: 'gram',
-                          hintStyle: TextStyle(color: Colors.green, decoration: TextDecoration.underline, fontSize: 20) ),
+                          hintStyle: TextStyle(color: Color(4294344335), decoration: TextDecoration.underline, fontSize: 20) ),
                       textDirection: TextDirection.rtl,
                       keyboardType: TextInputType.number,
                       style: TextStyle(fontSize: 20),
@@ -101,7 +101,7 @@ class _TransportState extends State<Transport>{
                   ),
                   new Spacer(),
                   Switch(
-                      activeColor: Colors.green,
+                      activeColor: Color(4294344335),
                       value: enableFeature,
                       onChanged: (enabled){
                         setState(() {
