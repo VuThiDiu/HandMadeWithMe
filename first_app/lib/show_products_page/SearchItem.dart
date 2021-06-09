@@ -131,8 +131,8 @@ class _SearchState extends State<SearchItem>{
       child: Theme(
         data: ThemeData(
             appBarTheme: AppBarTheme(
-                backgroundColor: Color(0xFF407C5A),
-                actionsIconTheme: IconThemeData(color: Colors.white)
+                backgroundColor: Color(4294945450),
+                actionsIconTheme: IconThemeData(color: Colors.black)
             )
         ),
         child:

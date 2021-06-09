@@ -9,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:readmore/readmore.dart';
+import 'package:first_app/show_products_page/message.dart';
 
 class DetailItem extends StatefulWidget {
   Product product;
@@ -196,7 +196,9 @@ class _DetailItemState extends State<DetailItem> {
                                     width: 40,
                                     fit: BoxFit.cover,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>message(widget.product.accountID, widget.user.uid, )));
+                                  },
                                 ),
                                 FlatButton(
                                   minWidth: 60,

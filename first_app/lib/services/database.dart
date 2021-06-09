@@ -89,6 +89,9 @@ class Database{
   getAllAddress(String uid) {
     return Firestore.instance.collection("users").document(uid).collection("delivers").getDocuments();
   }
+  getUser(String uid) {
+    return Firestore.instance.collection("users").document(uid).get();
+  }
   // update
   Future<String> updateDAddress(String userUid,String deliverID, String address, String phoneNumber, String name) async{
     String ret= 'success';
@@ -126,8 +129,5 @@ class Database{
     }catch(e){
       return e.toString();
     }
-  }
-  getUser(String uid){
-    return _firestore.collection('users').where('uid',  isEqualTo: uid).getDocuments();
   }
 }

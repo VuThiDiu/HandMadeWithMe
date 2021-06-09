@@ -210,7 +210,7 @@ class _bodyHomeState extends State<bodyHome> {
                           child: Text(
                             "Ngày đặc biệt",
                             style: TextStyle(
-                                color: Color(4281755650),
+                                color: Color(4294344335),
                                 fontWeight: FontWeight.w700,
                                 fontSize: 25),
                           ),
@@ -225,7 +225,7 @@ class _bodyHomeState extends State<bodyHome> {
                           child: Text(
                             "Thể loại",
                             style: TextStyle(
-                                color: Color(0xFF407C5A),
+                                color: Color(4294344335),
                                 fontWeight: FontWeight.w700,
                                 fontSize: 25),
                           ),
@@ -240,7 +240,7 @@ class _bodyHomeState extends State<bodyHome> {
                           child: Text(
                             "Được quan tâm",
                             style: TextStyle(
-                                color: Color(0xFF407C5A),
+                                color: Color(4294344335),
                                 fontWeight: FontWeight.w700,
                                 fontSize: 25),
                           ),
@@ -258,7 +258,7 @@ class _bodyHomeState extends State<bodyHome> {
                           child: Text(
                             "Gợi ý cho bạn",
                             style: TextStyle(
-                                color: Color(0xFF407C5A),
+                                color: Color(4294344335),
                                 fontWeight: FontWeight.w700,
                                 fontSize: 25),
                           ),
@@ -303,7 +303,7 @@ class _homeAppBarState extends State<homeAppBar> {
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [Color(4281755726), Color(4284859275)],
+            colors: [Color(4294945450), Color(4294565598)],
           ),
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(45),
@@ -381,7 +381,7 @@ class ListTypeOfTrees extends StatelessWidget {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                          color: Color(4291751385),
+                          color: Color(4294565598),
                           offset: Offset(0, 140),
                           spreadRadius: 0,
                           blurRadius: 100.0),

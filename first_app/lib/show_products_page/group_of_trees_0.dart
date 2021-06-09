@@ -52,7 +52,7 @@ class ListGroupOfTrees extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.white, Color(4291751385)],
+            colors: [Colors.white, Color(4294565598)],
           )),
       child: GridView.count(
         crossAxisCount: 3,
