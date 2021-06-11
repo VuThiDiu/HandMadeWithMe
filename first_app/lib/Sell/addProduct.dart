@@ -117,7 +117,9 @@ class _AddProductState extends State<AddProduct>{
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Thêm hình"),
+            title: Text(
+              "Thêm hình",
+            ),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
@@ -191,13 +193,20 @@ class _AddProductState extends State<AddProduct>{
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
               child: TextFormField(
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     filled: true,
                     hintText: 'Nhập tên sản phẩm',
                     labelText: 'Tên sản phẩm',
-                    labelStyle: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.w500),
-                    hintStyle: TextStyle(fontSize: 18, color: Colors.black45)
+                    labelStyle: TextStyle(fontSize: 26, color: Colors.black, fontWeight: FontWeight.w500, fontFamily: 'Merriweather'),
+                    hintStyle: TextStyle(fontSize: 18, color: Colors.black45),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    borderSide: BorderSide(color: Colors.black, width: 5),
+                  ),
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
+                maxLines: 2,
+                maxLength: 100,
                 onChanged: (value) {
                   setState(() {
                     title = value;
@@ -206,44 +215,80 @@ class _AddProductState extends State<AddProduct>{
               ),
             ),
             Padding(
-              padding:const EdgeInsets.all(8.0),
-              child: Column(
-                  children: [
-                    Row(
-                      children:[
-                        Icon(Icons.add_location),
-                        Text(
-                          ' Mô tả sản phẩm ',
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      textAlign: TextAlign.left,
-                      decoration: InputDecoration(
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(
-                              color: Color(0xFF407C5A),
-                            ),
-                          ),
-                          hintText: 'Nhập tại đây ',
-                          hintStyle: TextStyle(color: Colors.black45, fontSize: 20, fontWeight: FontWeight.w500) ),
-                      style: TextStyle(fontSize: 20),
-                      maxLines: 6,
-                      onChanged: (text){
-                        description=text;
-                      },
-
-                    ),
-                  ]
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  filled: true,
+                  hintText: 'Mô tả hoặc ý nghĩa của sản phẩm',
+                  labelText: 'Mô tả sản phẩm',
+                  labelStyle: TextStyle(fontSize: 26, color: Colors.black, fontWeight: FontWeight.w500, fontFamily: 'Merriweather'),
+                  hintStyle: TextStyle(fontSize: 18, color: Colors.black45),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    borderSide: BorderSide(color: Colors.black, width: 10),
+                  ),
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                ),
+                maxLines: 6,
+                maxLength: 1000,
+                onChanged: (value) {
+                  setState(() {
+                    title = value;
+                  });
+                },
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 10,),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  children: <Widget>[
+                    Icon(Icons.class__outlined),
+                    Text(
+                      '  Sự kiện ',
+                      style: TextStyle(fontSize: 19,fontWeight: FontWeight.w600,fontFamily: 'Merriweather'),
+                    ),
+                    SizedBox(width: 45,),
+                    Expanded(child: new InputDecorator(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide: BorderSide(color: Colors.black87, width: 20)
+                        ),
+                        contentPadding: EdgeInsets.all(10),
+                      ),
+                      child: DropdownButtonHideUnderline(
+                        child:  DropdownButton(
+                          hint: Text('Select'),
+                          value: event,
+                          icon: const Icon(Icons.arrow_drop_down),
+                          iconSize: 20,
+                          elevation: 16,
+                          isExpanded: true,
+                          isDense: true,
+                          //underline: ,
+                          style: const TextStyle(color: Colors.black, fontSize: 16,fontWeight: FontWeight.w500),
+                          onChanged: (newValue){
+                            setState(() {
+                              this.event = newValue;
+                            });
+                          },
+
+                          items: lisSpecialDay
+                              .map((specialDay value) {
+                            return DropdownMenuItem<String>(
+                              value: value.getSpecialDay().toString(),
+                              child: Text(value.getSpecialDay().toString()),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    ),)
+                  ],
+                )
+            ),
+            SizedBox(height: 10,),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
@@ -251,8 +296,8 @@ class _AddProductState extends State<AddProduct>{
                 children: [
                   Icon(Icons.monetization_on_sharp),
                   Text(
-                    ' Giá sản phẩm (đồng) ',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    '  Giá sản phẩm (đồng) ',
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600,fontFamily: 'Merriweather'),
                   ),
                   //
                   Expanded(
@@ -280,15 +325,16 @@ class _AddProductState extends State<AddProduct>{
                 ],
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Icon(Icons.monetization_on_sharp),
+                  Icon(Icons.multitrack_audio_outlined),
                   Text(
-                    ' Chất liệu ',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    '  Chất liệu ',
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600,fontFamily: 'Merriweather'),
                   ),
                   //
                   Expanded(
@@ -316,6 +362,42 @@ class _AddProductState extends State<AddProduct>{
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(Icons.account_balance_rounded),
+                  Text(
+                    '  Số lượng trong kho ',
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600,fontFamily: 'Merriweather'),
+                  ),
+                  //
+                  Expanded(
+                    child: new TextField(
+                      textAlign: TextAlign.right,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide.none,
+                          ),
+                          fillColor: Colors.green,
+                          hintText: 'Nhập ',
+                          hintStyle: TextStyle(color: Colors.black45, decoration: TextDecoration.underline, fontSize: 18) ),
+                      textDirection: TextDirection.rtl,
+                      keyboardType: TextInputType.number,
+                      style: TextStyle(fontSize: 20),
+                      onChanged: (value){
+                        this.quantityInStock = value;
+                      },
+                      inputFormatters: <TextInputFormatter>[
+                        WhitelistingTextInputFormatter.digitsOnly
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(height: 10,),
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -323,10 +405,10 @@ class _AddProductState extends State<AddProduct>{
                   children: <Widget>[
                     Row(
                       children:<Widget>[
-                        Icon(Icons.class__outlined),
+                        Icon(Icons.category_rounded),
                         Text(
-                          ' Phân loại hàng ',
-                          style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),
+                          '  Phân loại sản phẩm ',
+                          style: TextStyle(fontSize: 19,fontWeight: FontWeight.w600,fontFamily: 'Merriweather'),
                         ),
                       ],
                     ),
@@ -370,7 +452,7 @@ class _AddProductState extends State<AddProduct>{
                   ],
                 )
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 15,),
             Padding(
               padding: const EdgeInsets.symmetric(),
               child: FlatButton(
@@ -391,8 +473,8 @@ class _AddProductState extends State<AddProduct>{
                     Expanded(
                       child:
                       Text(
-                        ' Phí vận chuyển',
-                        style: TextStyle(fontSize: 20),
+                        '  Phí vận chuyển',
+                        style: TextStyle(fontSize: 19,fontFamily: 'Merriweather'),
                       ),
                     ),
                     Icon(Icons.arrow_forward_ios),
@@ -402,55 +484,18 @@ class _AddProductState extends State<AddProduct>{
               ),
             ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(Icons.account_balance_rounded),
-                  Text(
-                    ' Số lượng trong kho ',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                  //
-                  Expanded(
-                    child: new TextField(
-                      textAlign: TextAlign.right,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide.none,
-                          ),
-                          fillColor: Colors.green,
-                          hintText: 'Nhập ',
-                          hintStyle: TextStyle(color: Colors.black45, decoration: TextDecoration.underline, fontSize: 18) ),
-                      textDirection: TextDirection.rtl,
-                      keyboardType: TextInputType.number,
-                      style: TextStyle(fontSize: 20),
-                      onChanged: (value){
-                        this.quantityInStock = value;
-                      },
-                      inputFormatters: <TextInputFormatter>[
-                        WhitelistingTextInputFormatter.digitsOnly
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            SizedBox(height: 5,),
+            SizedBox(height: 10,),
 
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: <Widget>[
-                        Icon(Icons.class__outlined),
+                        Icon(Icons.add_location),
                         Text(
                           ' Địa chỉ shop ',
-                          style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),
+                          style: TextStyle(fontSize: 19,fontWeight: FontWeight.w600,fontFamily: 'Merriweather'),
                         ),
-                    SizedBox(height: 10),
+                    SizedBox(width: 20),
                     Expanded(child: new InputDecorator(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -489,65 +534,15 @@ class _AddProductState extends State<AddProduct>{
                   ],
                 )
             ),
-            SizedBox(height: 10 ,),
-
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.class__outlined),
-                    Text(
-                      ' Sự kiện ',
-                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(width: 45,),
-                    Expanded(child: new InputDecorator(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                            borderSide: BorderSide(color: Colors.black87, )
-                        ),
-                        contentPadding: EdgeInsets.all(10),
-                      ),
-                      child: DropdownButtonHideUnderline(
-                        child:  DropdownButton(
-                          hint: Text('Select'),
-                          value: event,
-                          icon: const Icon(Icons.arrow_drop_down),
-                          iconSize: 20,
-                          elevation: 16,
-                          isExpanded: true,
-                          isDense: true,
-                          //underline: ,
-                          style: const TextStyle(color: Colors.black, fontSize: 16,fontWeight: FontWeight.w500),
-                          onChanged: (newValue){
-                            setState(() {
-                              this.event = newValue;
-                            });
-                          },
-
-                          items: lisSpecialDay
-                              .map((specialDay value) {
-                            return DropdownMenuItem<String>(
-                              value: value.getSpecialDay().toString(),
-                              child: Text(value.getSpecialDay().toString()),
-                            );
-                          }).toList(),
-                        ),
-                      ),
-                    ),)
-                  ],
-                )
-            ),
-            SizedBox(height: 5,),
+            SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children:<Widget> [
                   Icon(Icons.addchart),
                   Text(
-                    ' Hàng đặt trước',
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),
+                    '  Hàng đặt trước',
+                    style: TextStyle(fontSize: 19,fontWeight: FontWeight.w600,fontFamily: 'Merriweather'),
                   ),
                   new Spacer(),
                   Switch(

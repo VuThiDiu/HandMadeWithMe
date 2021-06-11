@@ -38,13 +38,11 @@ class _MyOrderDetailState extends State<MyOrderDetail>{
         });
       }
     });
-    Database().getUser(widget.user.uid).then((QuerySnapshot docs){
-      if(docs.documents.isNotEmpty){
-        setState(() {
-          this.nameShop = docs.documents[0].data['userName'];
-          this.viewResult +=1;
-        });
-      }
+    Database().getUser(widget.user.uid).then((value){
+      setState(() {
+        this.nameShop = value['userName'];
+        this.viewResult  +=1;
+      });
     });
 
     // getProduct
