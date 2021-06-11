@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:first_app/Sell/MyProduct.dart';
+import 'package:first_app/account/account_page.dart';
 import 'package:first_app/login_reg_pages/loading.dart';
 import 'package:first_app/models/SpecialDay.dart';
 import 'package:first_app/models/categories.dart';
@@ -11,6 +13,7 @@ import 'package:first_app/services/category_service.dart';
 import 'package:first_app/services/productService.dart';
 import 'package:first_app/services/specialDayService.dart';
 import 'package:first_app/services/uploadFile.dart';
+import 'package:first_app/show_products_page/body_home_0.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -579,8 +582,13 @@ class _AddProductState extends State<AddProduct>{
                           index ++;
                         });
                       }
-                      Navigator.pop(context);
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => AccountPage(user: widget.user,)));
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => MyProduct(user: widget.user,)));
+
                     });
+
                 }else {
                   Fluttertoast.showToast(msg: "Vui lòng điền đầy đủ thông tin");
                 }

@@ -47,12 +47,6 @@ class _SummaryPageState extends State<SummaryPage> {
   @override
   Widget build(BuildContext context) {
 
-    // User.
-
-    // getCurrentUid().then((value) => getUid(value.toString()));
-    // Database().getUserInfo(this.uid).then((value) => getUser(value));
-    //print("uid hahaha : " +  this.uid);
-
     List<Widget> _bodyTabs() => [
       bodyHome(user: widget.user),
       SummaryNews(user: widget.user,),
@@ -65,10 +59,8 @@ class _SummaryPageState extends State<SummaryPage> {
 
 
     return this.viewResult ? Scaffold(
-
       body: bodyTabs[_currentIndex],
       bottomNavigationBar: BottomNavBar(),
-
     ): Loading();
   }
 
