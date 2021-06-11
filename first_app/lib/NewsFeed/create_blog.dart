@@ -118,7 +118,6 @@ class _CreateBlogState extends State<CreateBlog> {
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white,
-          height: 1000,
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
@@ -203,10 +202,11 @@ class _CreateBlogState extends State<CreateBlog> {
                         ),
                       ),
                     ),
-                     TextField(
+                     TextFormField(
+                       maxLines: null,
+                       maxLength: null,
                        textAlign: TextAlign.justify,
                        keyboardType: TextInputType.multiline,
-                       maxLines: null,
                        style: TextStyle(fontSize: 20, ),
                           decoration: InputDecoration(
                             hintText: "Bạn muốn chia sẻ điều gì?",

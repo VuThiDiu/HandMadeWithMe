@@ -52,6 +52,7 @@ class _AddProductState extends State<AddProduct>{
   'Kon Tum','Lai Châu','Lâm Đồng','Lạng Sơn','Lào Cai','Long An','Nam Định','Nghệ An','Ninh Bình','Ninh Thuận','Phú Thọ','Phú Yên','Quảng Bình','Quảng Nam','Quảng Ngãi','Quảng Ninh','Quảng Trị','Sóc Trăng','Sơn La','Tây Ninh','Thái Bình','Thái Nguyên','Thanh Hóa','Thừa Thiên Huế','Tiền Giang','TP Hồ Chí Minh','Trà Vinh','Tuyên Quang','Vĩnh Long','Vĩnh Phúc','Yên Bái',
   ];
   whenCompleted(){
+
     if(this.title!='' && this.description!=''&&this.material !='' &&this.amount!='' && this.category!=null && this.transportProduct!=null && this.quantityInStock != '' && this.address!=null){
       return true;
     }
@@ -209,7 +210,7 @@ class _AddProductState extends State<AddProduct>{
                 maxLength: 100,
                 onChanged: (value) {
                   setState(() {
-                    title = value;
+                    this.title = value;
                   });
                 },
               ),
@@ -233,7 +234,7 @@ class _AddProductState extends State<AddProduct>{
                 maxLength: 1000,
                 onChanged: (value) {
                   setState(() {
-                    title = value;
+                    this.description = value;
                   });
                 },
               ),
@@ -315,7 +316,10 @@ class _AddProductState extends State<AddProduct>{
                       keyboardType: TextInputType.number,
                       style: TextStyle(fontSize: 20),
                       onChanged: (value){
-                        this.amount = value;
+                        setState(() {
+                          this.amount = value;
+                        });
+
                       },
                       inputFormatters: <TextInputFormatter>[
                         WhitelistingTextInputFormatter.digitsOnly
@@ -348,15 +352,13 @@ class _AddProductState extends State<AddProduct>{
                           fillColor: Colors.green,
                           hintText: 'Nhập ',
                           hintStyle: TextStyle(color: Colors.black45, decoration: TextDecoration.underline, fontSize: 18) ),
-                      textDirection: TextDirection.rtl,
-                      keyboardType: TextInputType.number,
                       style: TextStyle(fontSize: 20),
                       onChanged: (value){
-                        this.material = value;
+                        setState(() {
+                          this.material = value;
+                        });
+
                       },
-                      inputFormatters: <TextInputFormatter>[
-                        WhitelistingTextInputFormatter.digitsOnly
-                      ],
                     ),
                   ),
                 ],
@@ -388,7 +390,10 @@ class _AddProductState extends State<AddProduct>{
                       keyboardType: TextInputType.number,
                       style: TextStyle(fontSize: 20),
                       onChanged: (value){
-                        this.quantityInStock = value;
+                        setState(() {
+                          this.quantityInStock = value;
+                        });
+
                       },
                       inputFormatters: <TextInputFormatter>[
                         WhitelistingTextInputFormatter.digitsOnly

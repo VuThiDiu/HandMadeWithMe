@@ -115,14 +115,14 @@ class _SummaryPageState extends State<SummaryPage> {
           BottomNavigationBarItem(
             icon: Image.asset("assets/sell_icon.png", width: 30,
                 fit: BoxFit.cover,
-                color: Color.fromRGBO(254, 142, 142,1)),
+                color:  Color(4294421958)),
             activeIcon: Image.asset("assets/sell_icon.png", width: 30,
                 fit: BoxFit.cover,
                 color: Color.fromRGBO(254, 142, 142,1)),
             title: Text(
               'Bán hàng',
               style: TextStyle(
-                  color: Color(4294872718)
+                  color: Color.fromRGBO(254, 142, 142,1),
               ),
             ),
           ),
