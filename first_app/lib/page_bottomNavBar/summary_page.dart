@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'liked_page.dart';
 import 'package:first_app/models/shippingInfor.dart';
+import 'package:first_app/Sell/addProduct.dart';
 class SummaryPage extends StatefulWidget {
   User user;
   SummaryPage({this.user});
@@ -55,7 +56,7 @@ class _SummaryPageState extends State<SummaryPage> {
     List<Widget> _bodyTabs() => [
       bodyHome(user: widget.user),
       SummaryNews(user: widget.user,),
-      LikedPage(user: widget.user,),
+      AddProduct(user: widget.user),
       AccountPage(user: widget.user)
     ];
 
@@ -112,18 +113,14 @@ class _SummaryPageState extends State<SummaryPage> {
             ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.solidHeart,
-              color: Color(4294421958),
-              size: 27.0,
-            ),
-            activeIcon: Icon(
-              FontAwesomeIcons.solidHeart,
-              color: Color(4294872718),
-              size: 27.0,
-            ),
+            icon: Image.asset("assets/sell_icon.png", width: 30,
+                fit: BoxFit.cover,
+                color: Color.fromRGBO(254, 142, 142,1)),
+            activeIcon: Image.asset("assets/sell_icon.png", width: 30,
+                fit: BoxFit.cover,
+                color: Color.fromRGBO(254, 142, 142,1)),
             title: Text(
-              'Đã thích',
+              'Bán hàng',
               style: TextStyle(
                   color: Color(4294872718)
               ),

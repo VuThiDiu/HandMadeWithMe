@@ -17,7 +17,7 @@ import 'package:first_app/services/productService.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:first_app/page_bottomNavBar/liked_page.dart';
 class AccountPage extends StatefulWidget {
   User user;
   @override
@@ -221,21 +221,21 @@ class _AccountPageState extends State<AccountPage> {
                                   child:  ElevatedButton(
                                     onPressed: () {
                                       Navigator.push(context, MaterialPageRoute(builder: (
-                                          context) => AddProduct(user: widget.user)));
+                                          context) => LikedPage(user: widget.user,),));
                                     },
                                     child: Column(
                                       children: [
                                         SizedBox(height: 5,),
-                                        Image.asset("assets/sell_icon.png", width: 50,
-                                            fit: BoxFit.cover,
-                                            color: Color.fromRGBO(254, 142, 142,1)),
+                                        Icon(
+                                          FontAwesomeIcons.solidHeart,
+                                          color: Color(4294872718),
+                                          size: 60.0,
+                                        ),
                                         SizedBox(height: 12,),
-                                        Text("Đăng bài bán", style: TextStyle(
+                                        Text("Lượt thích", style: TextStyle(
                                             fontSize: 20,
                                             color: Color.fromRGBO(254, 142, 142,1)),),
-                                        Text("hàng ", style: TextStyle(
-                                            fontSize: 20,
-                                            color: Color.fromRGBO(254, 142, 142,1)),),
+
                                       ],
                                     ),
                                     style: ButtonStyle(
